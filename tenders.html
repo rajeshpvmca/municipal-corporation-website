@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Tenders & Public Notices | Metropolitan Civic Municipal Corporation</title>
+  <meta name="description" content="Official e-Procurement portal of Metropolitan Civic Municipal Corporation. Browse active tenders, download RFPs, view awarded contracts, and register as a vendor.">
+
+  <!-- Favicon: Official Stackly Logo -->
+  <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5.2 CDN (Latest with X / Twitter Icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Master Stylesheet & Page-Specific CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/tenders.css">
+</head>
+<body>
+
+  <!-- Global Preloader -->
+  <div id="global-preloader">
+    <div class="preloader-crest"><i class="fa-solid fa-file-contract"></i></div>
+    <div class="preloader-brand-title">METROPOLITAN CIVIC CORPORATION</div>
+    <div class="preloader-subtitle">Loading E-Procurement Portal & Public Gazettes...</div>
+  </div>
+
+  <!-- Common Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+
+    <!-- ===================================================================
+         COMMON BANNER SECTION (WITH BREADCRUMBS & THEME DESCRIPTION)
+         =================================================================== -->
+    <section class="page-hero-banner py-5" id="banner">
+      <div class="container position-relative z-2">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-8" data-aos="fade-right">
+            <span class="banner-kicker">
+              <i class="fa-solid fa-gavel me-1"></i>Commercial Opportunities
+            </span>
+            <h1 class="banner-title">Tenders & Public Notices</h1>
+            <p class="banner-description">
+              Participate in transparent public procurement. Metropolitan Civic Corporation invites qualified commercial contractors, architectural consultants, and equipment suppliers to submit tenders under statutory procurement rules.
+            </p>
+            <ul class="civic-breadcrumbs">
+              <li><a href="index.html"><i class="fa-solid fa-house me-1"></i>Home</a></li>
+              <li><i class="fa-solid fa-chevron-right fs-6 opacity-50"></i></li>
+              <li class="active">Tenders & Notices</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 d-none d-lg-block text-end" data-aos="fade-left">
+            <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-light border-opacity-25 d-inline-block text-start">
+              <span class="text-warning small fw-bold text-uppercase d-block mb-1">
+                <i class="fa-solid fa-shield-halved me-1"></i>Procurement Standard
+              </span>
+              <h5 class="fw-bold text-white mb-1">100% Digital</h5>
+              <span class="small text-light opacity-75">Cryptographic Timestamping & e-Bidding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 1: E-PROCUREMENT PORTAL OVERVIEW & TRANSPARENCY
+         =================================================================== -->
+    <section class="py-5 bg-white" id="overview">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6" data-aos="fade-right">
+            <span class="section-kicker"><i class="fa-solid fa-scale-balanced me-1"></i>Fair Competition</span>
+            <h2 class="section-title">Open, Ethical & Audited Procurement</h2>
+            <p class="text-body lead">
+              All municipal procurement contracts over ₹1,00,000 are publicly advertised on this portal and the official e-procurement service.
+            </p>
+            <p class="text-muted">
+              We employ automated cryptographic encryption on all incoming digital bids, ensuring total confidentiality until the public bid-opening assembly in the presence of the Independent Legal Scrutineer.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="404.html" class="btn btn-civic-gold">Register as a Vendor</a>
+              <a href="404.html" class="btn btn-outline-primary">Browse 14 Live RFPs</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6" data-aos="fade-left">
+            <div class="rounded-4 overflow-hidden shadow-lg border">
+              <img src="assets/images/tender_procurement_desk.webp" alt="Tender Scrutiny Desk" class="w-100 h-100 object-fit-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2: LIVE ACTIVE E-TENDERS TABLE
+         =================================================================== -->
+    <section class="py-5 bg-light" id="active-tenders">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4" data-aos="fade-up">
+          <div>
+            <span class="section-kicker"><i class="fa-solid fa-bullhorn me-1"></i>Active Solicitations</span>
+            <h2 class="section-title mb-0">Live Invitations to Tender (ITT)</h2>
+          </div>
+          <span class="text-muted small mt-2 mt-md-0">All deadlines in GMT / BST</span>
+        </div>
+
+        <div class="civic-table-wrapper table-responsive" data-aos="fade-up">
+          <table class="civic-table table">
+            <thead>
+              <tr>
+                <th>Reference</th>
+                <th>Work Scope & Description</th>
+                <th>Department</th>
+                <th>Est. Budget</th>
+                <th>Submission Deadline</th>
+                <th>Status</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="text-primary">MCC/ENG/2026/041</strong></td>
+                <td>Stormwater Drain Desilting & Culvert Reconstruction (Wards 12-16)</td>
+                <td><span class="tender-category-pill">Public Works</span></td>
+                <td>₹45,00,000</td>
+                <td><span class="text-danger fw-bold">28 Nov 2026, 17:00</span></td>
+                <td><span class="tender-status-badge live"><i class="fa-solid fa-circle text-success fs-6"></i> Live Bidding</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-sm btn-outline-primary" onclick="event.preventDefault(); alert('Downloading Tender Specification Packet MCC/ENG/2026/041 (ZIP)...');">
+                    <i class="fa-solid fa-download me-1"></i>RFP Doc
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/ENV/2026/088</strong></td>
+                <td>Supply & Maintenance of 20 Electric Solid Waste Compactors</td>
+                <td><span class="tender-category-pill">Environmental</span></td>
+                <td>₹1,25,00,000</td>
+                <td><span class="text-danger fw-bold">04 Dec 2026, 15:00</span></td>
+                <td><span class="tender-status-badge live"><i class="fa-solid fa-circle text-success fs-6"></i> Live Bidding</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-sm btn-outline-primary" onclick="event.preventDefault(); alert('Downloading Tender Specification Packet MCC/ENV/2026/088 (ZIP)...');">
+                    <i class="fa-solid fa-download me-1"></i>RFP Doc
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/IT/2026/102</strong></td>
+                <td>Cloud Infrastructure Migration & AI Citizen Chatbot Upgrade</td>
+                <td><span class="tender-category-pill">Information Tech</span></td>
+                <td>₹32,00,000</td>
+                <td><span class="text-dark fw-bold">12 Dec 2026, 16:30</span></td>
+                <td><span class="tender-status-badge live"><i class="fa-solid fa-circle text-success fs-6"></i> Live Bidding</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-sm btn-outline-primary" onclick="event.preventDefault(); alert('Downloading Tender Specification Packet MCC/IT/2026/102 (ZIP)...');">
+                    <i class="fa-solid fa-download me-1"></i>RFP Doc
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/PRK/2026/015</strong></td>
+                <td>Horticulture Landscaping & Drip Irrigation at Civic Central Park</td>
+                <td><span class="tender-category-pill">Parks & Gardens</span></td>
+                <td>₹18,00,000</td>
+                <td><span class="text-dark fw-bold">19 Dec 2026, 12:00</span></td>
+                <td><span class="tender-status-badge live"><i class="fa-solid fa-circle text-success fs-6"></i> Live Bidding</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-sm btn-outline-primary" onclick="event.preventDefault(); alert('Downloading Tender Specification Packet MCC/PRK/2026/015 (ZIP)...');">
+                    <i class="fa-solid fa-download me-1"></i>RFP Doc
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/WAT/2026/029</strong></td>
+                <td>Annual Supply of Chemical Water Purification Reagents & Chlorine</td>
+                <td><span class="tender-category-pill">Water Board</span></td>
+                <td>₹68,00,000</td>
+                <td><span class="text-dark fw-bold">22 Dec 2026, 14:00</span></td>
+                <td><span class="tender-status-badge live"><i class="fa-solid fa-circle text-success fs-6"></i> Live Bidding</span></td>
+                <td>
+                  <a href="404.html" class="btn btn-sm btn-outline-primary" onclick="event.preventDefault(); alert('Downloading Tender Specification Packet MCC/WAT/2026/029 (ZIP)...');">
+                    <i class="fa-solid fa-download me-1"></i>RFP Doc
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: VENDOR REGISTRATION & PRE-QUALIFICATION
+         =================================================================== -->
+    <section class="py-5 bg-white" id="vendor-register">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-7" data-aos="fade-right">
+            <span class="section-kicker"><i class="fa-solid fa-id-card me-1"></i>Supplier Onboarding</span>
+            <h2 class="section-title">Vendor Pre-Qualification Criteria</h2>
+            <p class="text-body lead">
+              Suppliers, contractors, and service consultants must register on the Metropolitan Vendor Roster to be eligible to submit binding e-tenders.
+            </p>
+            <div class="row g-3 mb-4 align-items-stretch">
+              <div class="col-12 col-sm-6 d-flex">
+                <div class="p-3 bg-light rounded-3 border w-100 d-flex flex-column">
+                  <h6 class="fw-bold text-dark mb-1"><i class="fa-solid fa-check text-success me-2"></i>Registered Entity</h6>
+                  <span class="small text-muted">Valid GSTIN, PAN, and corporate incorporation.</span>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 d-flex">
+                <div class="p-3 bg-light rounded-3 border w-100 d-flex flex-column">
+                  <h6 class="fw-bold text-dark mb-1"><i class="fa-solid fa-check text-success me-2"></i>Public Liability Cover</h6>
+                  <span class="small text-muted">Comprehensive contractor liability insurance coverage.</span>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 d-flex">
+                <div class="p-3 bg-light rounded-3 border w-100 d-flex flex-column">
+                  <h6 class="fw-bold text-dark mb-1"><i class="fa-solid fa-check text-success me-2"></i>Tax Compliance Audit</h6>
+                  <span class="small text-muted">Income tax and GST return filings for past 3 financial years.</span>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 d-flex">
+                <div class="p-3 bg-light rounded-3 border w-100 d-flex flex-column">
+                  <h6 class="fw-bold text-dark mb-1"><i class="fa-solid fa-check text-success me-2"></i>ISO / Quality Standards</h6>
+                  <span class="small text-muted">ISO 9001 (Quality) and ISO 14001 (Environment) preferred.</span>
+                </div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-civic-gold">Register as Municipal Supplier</a>
+          </div>
+
+          <div class="col-12 col-lg-5" data-aos="fade-left">
+            <div class="rounded-4 overflow-hidden shadow border">
+              <img src="assets/images/annual_report_audit.webp" alt="Supplier Audit Verification" class="w-100 h-100 object-fit-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4: E-BIDDING STEP-BY-STEP WORKFLOW
+         =================================================================== -->
+    <section class="py-5 bg-light" id="workflow">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-list-check me-1"></i>Process Transparency</span>
+          <h2 class="section-title">How to Submit an Electronic Tender</h2>
+          <p class="section-lead mx-auto">Follow our standardized, tamper-proof four-step procurement process.</p>
+        </div>
+
+        <div class="row g-4 text-center align-items-stretch">
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-workflow-step bg-white rounded-4 border p-4 shadow-sm w-100 d-flex flex-column justify-content-center">
+              <div class="workflow-number-bubble">1</div>
+              <h6 class="fw-bold text-dark mb-1">Download Dossier</h6>
+              <p class="small text-muted mb-0">Access RFP specifications, architectural drawings, and BOQ forms free of charge.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-workflow-step bg-white rounded-4 border p-4 shadow-sm w-100 d-flex flex-column justify-content-center">
+              <div class="workflow-number-bubble">2</div>
+              <h6 class="fw-bold text-dark mb-1">Pre-Bid Meeting</h6>
+              <p class="small text-muted mb-0">Attend hybrid clarifications conference with department engineers and municipal architects.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-workflow-step bg-white rounded-4 border p-4 shadow-sm w-100 d-flex flex-column justify-content-center">
+              <div class="workflow-number-bubble">3</div>
+              <h6 class="fw-bold text-dark mb-1">Encrypted Upload</h6>
+              <p class="small text-muted mb-0">Upload digitally signed financial and technical envelopes before deadline.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-workflow-step bg-white rounded-4 border p-4 shadow-sm w-100 d-flex flex-column justify-content-center">
+              <div class="workflow-number-bubble">4</div>
+              <h6 class="fw-bold text-dark mb-1">Public Decryption</h6>
+              <p class="small text-muted mb-0">Bids opened publicly at Council Chamber and comparative evaluation sheet published online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 5: RECENTLY AWARDED CONTRACTS
+         =================================================================== -->
+    <section class="py-5 bg-white" id="awarded">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4" data-aos="fade-up">
+          <div>
+            <span class="section-kicker"><i class="fa-solid fa-trophy me-1"></i>Procurement Outcomes</span>
+            <h2 class="section-title mb-0">Recently Awarded Contracts (Q3 2026)</h2>
+          </div>
+          <span class="text-muted small mt-2 mt-md-0">Published in accordance with Municipal Transparency Standards</span>
+        </div>
+
+        <div class="civic-table-wrapper table-responsive" data-aos="fade-up">
+          <table class="civic-table table">
+            <thead>
+              <tr>
+                <th>Contract Ref</th>
+                <th>Project Scope</th>
+                <th>Awarded Contractor</th>
+                <th>Final Contract Value</th>
+                <th>Completion Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>MCC/ENG/2026/012</strong></td>
+                <td>Victoria Suspension Bridge Bearing Replacement</td>
+                <td>Apex Structural Engineering Ltd</td>
+                <td>₹1,12,00,000</td>
+                <td>31 March 2027</td>
+              </tr>
+              <tr>
+                <td><strong>MCC/ENV/2026/033</strong></td>
+                <td>Anaerobic Bio-Digester Expansion Phase 2</td>
+                <td>CleanMet Biofuels Ltd</td>
+                <td>₹2,45,00,000</td>
+                <td>30 June 2027</td>
+              </tr>
+              <tr>
+                <td><strong>MCC/PRK/2026/009</strong></td>
+                <td>Miyawaki Forestation Corridors (Wards 1-4)</td>
+                <td>GreenCorridor Horticulture Ltd</td>
+                <td>₹29,50,000</td>
+                <td>15 January 2027</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 6: OFFICIAL PUBLIC NOTICES & STATUTORY GAZETTES
+         =================================================================== -->
+    <section class="py-5 bg-light" id="public-notices">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-newspaper me-1"></i>Statutory Gazettes</span>
+          <h2 class="section-title">Official Municipal Public Notices</h2>
+          <p class="section-lead mx-auto">Mandatory public declarations regarding traffic regulation orders, planning notices, and tree preservation orders.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card w-100 d-flex flex-column">
+              <span class="badge bg-warning text-dark align-self-start mb-2">Traffic Regulation Order</span>
+              <h5 class="fw-bold text-dark mb-1">Temporary Road Closure: High Street</h5>
+              <p class="small text-muted mb-3">Notice is hereby given that High Street (Ward 1) will be closed for nocturnal resurfacing from 01 Dec to 05 Dec 2026 between 21:00 and 05:00.</p>
+              <div class="mt-auto small text-muted">Ref: TRO-2026-991 &bull; Highways Dept</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card w-100 d-flex flex-column">
+              <span class="badge bg-primary text-white align-self-start mb-2">Planning Notice</span>
+              <h5 class="fw-bold text-dark mb-1">Town Hall Annex Redevelopment</h5>
+              <p class="small text-muted mb-3">Public consultation on proposed conversion of disused civic storage into a community arts center and youth digital incubator.</p>
+              <div class="mt-auto small text-muted">Ref: PLN-2026-442 &bull; Town Planning</div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card w-100 d-flex flex-column">
+              <span class="badge bg-success text-white align-self-start mb-2">Environmental Order</span>
+              <h5 class="fw-bold text-dark mb-1">Tree Preservation Order (TPO)</h5>
+              <p class="small text-muted mb-3">Confirmation of provisional order protecting 18 mature English Oak specimens situated within the St. Jude's precinct grounds.</p>
+              <div class="mt-auto small text-muted">Ref: TPO-2026-108 &bull; Parks & Forestry</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 7: PROCUREMENT INTEGRITY & ANTI-CORRUPTION PLEDGE
+         =================================================================== -->
+    <section class="py-5 bg-white" id="integrity">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-7" data-aos="fade-right">
+            <span class="section-kicker"><i class="fa-solid fa-hand-fist me-1"></i>Zero Tolerance</span>
+            <h2 class="section-title">Anti-Collusion & Integrity Verification</h2>
+            <p class="text-body lead">
+              Metropolitan Civic Corporation rigorously enforces the Public Contracts Regulations 2015 and the Bribery Act 2010 across all procurement activities.
+            </p>
+            <p class="text-muted">
+              Any bid showing evidence of cartel behavior, bid-rigging, or undeclared conflicts of interest is immediately disqualified and referred to the Competition and Markets Authority (CMA).
+            </p>
+            <a href="404.html" class="btn btn-outline-danger">Report Procurement Irregularity</a>
+          </div>
+
+          <div class="col-12 col-lg-5" data-aos="fade-left">
+            <div class="p-4 bg-light rounded-4 border text-center">
+              <i class="fa-solid fa-user-shield text-primary fs-1 mb-3"></i>
+              <h5 class="fw-bold text-dark mb-2">Procurement Ombudsperson</h5>
+              <p class="small text-muted mb-3">Independent dispute resolution for participating vendors contesting technical evaluations.</p>
+              <span class="small text-dark fw-bold">Tel: +91 9876543210</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 8: DOWNLOAD CENTER FOR STANDARD CONTRACT DOCUMENTS
+         =================================================================== -->
+    <section class="py-5 bg-light" id="download-center">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-file-arrow-down me-1"></i>Standard Templates</span>
+          <h2 class="section-title">Procurement Documentation Downloads</h2>
+          <p class="section-lead mx-auto">Download official templates, standard contractual conditions, and pre-qualification questionnaires.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card text-center w-100 d-flex flex-column">
+              <i class="fa-solid fa-file-pdf text-danger fs-2 mb-3"></i>
+              <h6 class="fw-bold text-dark mb-1">General Conditions of Contract (GCC)</h6>
+              <p class="small text-muted mb-3">Standard legal clauses governing municipal works and consultancy services.</p>
+              <a href="404.html" class="btn btn-sm btn-outline-primary mt-auto" onclick="event.preventDefault(); alert('Downloading General Conditions of Contract (PDF)...');">Download PDF</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card text-center w-100 d-flex flex-column">
+              <i class="fa-solid fa-file-excel text-success fs-2 mb-3"></i>
+              <h6 class="fw-bold text-dark mb-1">Standard Bill of Quantities (BOQ)</h6>
+              <p class="small text-muted mb-3">Excel formula spreadsheet template for item-rate civil engineering tenders.</p>
+              <a href="404.html" class="btn btn-sm btn-outline-primary mt-auto" onclick="event.preventDefault(); alert('Downloading Bill of Quantities (XLSX)...');">Download XLSX</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card text-center w-100 d-flex flex-column">
+              <i class="fa-solid fa-file-shield text-warning fs-2 mb-3"></i>
+              <h6 class="fw-bold text-dark mb-1">Tender Bond & Guarantee Format</h6>
+              <p class="small text-muted mb-3">Bank guarantee specimen for Earnest Money Deposit (EMD) submissions.</p>
+              <a href="404.html" class="btn btn-sm btn-outline-primary mt-auto" onclick="event.preventDefault(); alert('Downloading Guarantee Specimen (DOCX)...');">Download DOCX</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 9: PROCUREMENT HELPDESK CALLOUT
+         =================================================================== -->
+    <section class="py-5 bg-dark text-white text-center" id="tender-help">
+      <div class="container" data-aos="zoom-in">
+        <h3 class="fw-bold mb-2 text-white">Need Guidance with the E-Procurement Portal?</h3>
+        <p class="text-light opacity-75 mb-4 max-w-600 mx-auto">
+          Our commercial procurement officers provide free technical assistance with digital signature certificates (DSC) and bid uploading.
+        </p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="tel:+919876543210" class="btn btn-civic-gold">
+            <i class="fa-solid fa-phone me-2"></i>Procurement Desk: +91 9876543210
+          </a>
+          <a href="mailto:support@municipalcorp.in" class="btn btn-outline-light">
+            <i class="fa-solid fa-envelope me-2"></i>Email: support@municipalcorp.in
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Common Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>

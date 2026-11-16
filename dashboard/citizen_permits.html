@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Sanctions & Permits | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Building Sanction &amp; Town Planning Permits</h1>
+            <p class="dash-page-subtitle">Auto-DCR architectural clearances, structural sanctions, utility road-cutting NOCs, and site commencement approvals.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-blue"><i class="fa-solid fa-compass-drafting me-1"></i> TNCDBR 2019 Compliant</span>
+            <button class="btn-gold-sm" onclick="document.getElementById('applyPermitSection').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-file-circle-plus me-1"></i> New Plan Submission
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Sanctioned Blueprints</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-stamp"></i></div>
+                </div>
+                <div class="stat-value text-success">2</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check-double me-1"></i> Ready for Construction</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Auto-DCR Scrutiny</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-microchip"></i></div>
+                </div>
+                <div class="stat-value text-gold">1 Active</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-arrows-rotate me-1"></i> Setback &amp; FSI Verification</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Scrutiny Fees Paid</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-receipt"></i></div>
+                </div>
+                <div class="stat-value text-white">₹18,500</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-shield-halved me-1"></i> Treasury Cleared</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Zonal Town Planner</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-landmark"></i></div>
+                </div>
+                <div class="stat-value text-info">Zone 2</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-location-dot me-1"></i> Hasthampatti Office</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Building Permits Table -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Sanctioned Blueprints &amp; NOC Clearances</h2>
+                <p class="dash-card-subtitle">Official Town Planning Department sanctions signed with digital certification keys.</p>
+            </div>
+            <div class="dash-search-box" style="max-width: 280px;">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="permitSearch" class="form-control" placeholder="Search by Sanction ID or Survey #..." onkeyup="filterPermits()">
+            </div>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="permitTable">
+                    <thead>
+                        <tr>
+                            <th>Sanction ID &amp; Type</th>
+                            <th>Property / Plot Details</th>
+                            <th>Empaneled Architect</th>
+                            <th>FSI / Built Area</th>
+                            <th>Current Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-house-circle-check me-2 text-success"></i>Residential G+1 Approval</div>
+                                <div class="text-white-50 small">Sanction #: DCR-2025-1102</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Plot 44, Thirupathi Nagar</div>
+                                <div class="text-white-50 small">Survey #112/4B &bull; Ward 1, Salem</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Ar. K. Ramanathan (COA #CA/2012/5512)</div>
+                                <div class="text-white-50 small">Salem Municipal Registered Architect</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">2,450 sq.ft</div>
+                                <div class="text-white-50 small">FSI: 1.45 (Permissible 1.75)</div>
+                            </td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> Sanctioned &amp; Stamped</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Sealed Architectural Blueprint with Municipal Endorsement Stamp (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Blueprint
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-road me-2 text-warning"></i>Utility Road-Cut Clearance NOC</div>
+                                <div class="text-white-50 small">Sanction #: RC-2026-0819</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Water Connection Trenching</div>
+                                <div class="text-white-50 small">Chinna Thirupathi Cross 2 (12 Meters)</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Municipal Engineering Wing</div>
+                                <div class="text-white-50 small">Road Restoring Division</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">12 Meters Length</div>
+                                <div class="text-white-50 small">Restoration Deposit: ₹8,400</div>
+                            </td>
+                            <td>
+                                <span class="badge-blue"><i class="fa-solid fa-file-contract me-1"></i> Work Permit Issued</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Road-Cut Authorization Pass with Site Marshal Instructions...');">
+                                    <i class="fa-solid fa-eye me-1"></i> View Permit
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-cloud-showers-heavy me-2 text-info"></i>Rainwater Harvesting Sanction</div>
+                                <div class="text-white-50 small">Sanction #: RWH-2025-0194</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Percolation Pit &amp; Dual Sump</div>
+                                <div class="text-white-50 small">MMR Complex, Chinna Thirupathi</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Groundwater Cell, Salem</div>
+                                <div class="text-white-50 small">Hydro-geologist Inspected</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">10,000 L Storage</div>
+                                <div class="text-white-50 small">Recharge Shaft: 15 Ft Depth</div>
+                            </td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-certificate me-1"></i> Complied &amp; Certified</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading RWH Compliance Seal (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Certificate
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-building me-2 text-gold"></i>Commercial Complex G+2 Alteration</div>
+                                <div class="text-white-50 small">Sanction #: DCR-2026-4491</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Shop Lots 12-14, Ward 1</div>
+                                <div class="text-white-50 small">Survey #98/1A &bull; Main Road</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Structural Engg. P. Subramaniam</div>
+                                <div class="text-white-50 small">Empanelled Grade-I Engineer</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">4,180 sq.ft</div>
+                                <div class="text-white-50 small">FSI: 1.82 (Scrutiny Active)</div>
+                            </td>
+                            <td>
+                                <span class="badge-amber"><i class="fa-solid fa-clock-rotate-left me-1"></i> Auto-DCR Parsing</span>
+                            </td>
+                            <td>
+                                <button class="btn-outline-gold-sm" onclick="alert('Auto-DCR Status: Pre-check passed. Awaiting Fire & Rescue Services NOC clearance from Hasthampatti Station.');">
+                                    <i class="fa-solid fa-bars-progress me-1"></i> Scrutiny Log
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Form & Workflow Timeline -->
+    <div class="row g-4" id="applyPermitSection">
+        <div class="col-lg-8">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Submit New Building Plan for Auto-DCR Scrutiny</h2>
+                        <p class="dash-card-subtitle">Upload architectural CAD/DXF drawings conforming to Salem Municipal Corporation layer standards.</p>
+                    </div>
+                </div>
+                <div class="dash-card-body">
+                    <form onsubmit="handleApplyPermit(event)">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Permit Category <span class="text-danger">*</span></label>
+                                <select class="dash-select w-100" id="permitCat" required>
+                                    <option value="" disabled selected>Select Plan Type</option>
+                                    <option value="Residential G+1">Residential Individual Villa (G+1 Floor)</option>
+                                    <option value="Residential G+2">Residential Multi-Unit (Up to G+2 Floors)</option>
+                                    <option value="Commercial">Commercial Office / Retail Space</option>
+                                    <option value="RoadCut">Road-Cut Utility Trenching Clearance</option>
+                                    <option value="Demolition">Old Structure Demolition &amp; Clearance</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Revenue Ward &amp; Zone <span class="text-danger">*</span></label>
+                                <select class="dash-select w-100" required>
+                                    <option value="1" selected>Ward 1 - Chinna Thirupathi (Hasthampatti Zone)</option>
+                                    <option value="2">Ward 2 - Hasthampatti Central</option>
+                                    <option value="3">Ward 3 - Alagapuram / Fairlands</option>
+                                    <option value="4">Ward 4 - Suramangalam Station Area</option>
+                                    <option value="5">Ward 5 - Ammapet Zone</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label class="dash-form-label">Survey / Sub-Division # <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="e.g., 114/2C" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="dash-form-label">Plot Area (Sq.Ft) <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" placeholder="e.g., 1800" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="dash-form-label">Proposed Built-Up Area <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" placeholder="e.g., 2200" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Architect / Engineer Registration # <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="COA/2020/XXXXX" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="dash-form-label">CAD Drawing (.DWG / .DXF / .PDF) <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" accept=".dwg,.dxf,.pdf" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="dash-form-label">Patta / Title Deed Reference &amp; Enclosures</label>
+                            <input type="text" class="form-control" placeholder="e.g., Patta Passbook #SLM-PAT-441029 / Registered Sale Deed Doc #3319">
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+                            <span class="text-white-50 small"><i class="fa-solid fa-calculator text-gold me-1"></i> Auto-DCR Scrutiny Fee: ₹2,500 + Tax</span>
+                            <button type="submit" class="btn-gold-sm">
+                                <i class="fa-solid fa-upload me-1"></i> Upload for Auto-DCR Validation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="dash-card mb-4">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-list-check text-gold me-2"></i>Scrutiny Stages</h2>
+                </div>
+                <div class="dash-card-body">
+                    <div class="d-flex align-items-start gap-3 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-check text-success"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">1. Auto-DCR Layer Parsing</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Checks setbacks, road width, height restrictions &amp; FSI limit.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-arrows-rotate text-gold"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">2. Revenue &amp; Patta Verification</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Cross-referenced with Taluk land ownership records.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-person-walking text-info"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">3. Field Engineer Site Inspection</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Physical verification of road access and high-tension wires.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-stamp text-gold"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">4. Final Municipal Sanction</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Executive Authority seal and printable blueprint NOC.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-headset text-success me-2"></i>Town Planning Desk</h2>
+                </div>
+                <div class="dash-card-body">
+                    <p class="text-white-50 small mb-2">Need clarification on setback norms or FSI calculations under TNCDBR 2019?</p>
+                    <div class="fw-bold text-white small mb-1"><i class="fa-solid fa-building-columns text-gold me-2"></i>Hasthampatti Zonal Town Office</div>
+                    <div class="text-white-50 small mb-2">MMR Complex, Chinna Thirupathi, Salem - 636008</div>
+                    <div class="text-gold small fw-bold"><i class="fa-solid fa-phone me-2"></i>+91 9876543210</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterPermits() {
+            var input = document.getElementById('permitSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById('permitTable');
+            var tr = table.getElementsByTagName('tr');
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                tr[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        function handleApplyPermit(e) {
+            e.preventDefault();
+            var cat = document.getElementById('permitCat').value;
+            alert('Building Plan for ' + cat + ' successfully submitted into Auto-DCR Engine!\nScrutiny Token #: SLM-DCR-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nLayer audit report will be generated within 24 hours.');
+        }
+    </script>
+</body>
+</html>

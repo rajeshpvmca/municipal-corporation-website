@@ -1,0 +1,69 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - TENDERS STYLES
+   File: assets/css/tenders.css
+   Theme: Municipal Corporation Website (E-Procurement & Public Gazettes)
+   =================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+main, section, .page-banner {
+  overflow-x: clip;
+  overflow-y: visible;
+  max-width: 100%;
+}
+
+.tender-filter-strip {
+  background: #ffffff;
+  border-radius: var(--civic-radius-md);
+  border: 1px solid var(--civic-border);
+  padding: 1.25rem;
+  box-shadow: var(--civic-shadow-xs);
+  margin-bottom: 2rem;
+}
+
+.tender-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+}
+
+.tender-status-badge.live {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.tender-status-badge.evaluation {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.tender-status-badge.awarded {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.procurement-stat-box {
+  background: #ffffff;
+  border: 1px solid var(--civic-border);
+  border-radius: var(--civic-radius-md);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--civic-shadow-xs);
+}
+
+.tender-category-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: rgba(10, 54, 92, 0.06);
+  color: var(--civic-primary);
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+}

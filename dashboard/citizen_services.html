@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital Certificates & Records | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Digital Vital Certificates &amp; Records Vault</h1>
+            <p class="dash-page-subtitle">Officially certified extracts, vital event registries, and civic clearance certificates with cryptographic QR authentication.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-stamp me-1"></i> DigiLocker Integrated</span>
+            <button class="btn-gold-sm" onclick="document.getElementById('applyCertificateCard').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-plus me-1"></i> Apply for Certificate
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Active Certificates</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-award"></i></div>
+                </div>
+                <div class="stat-value text-white">4</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-shield-check me-1"></i> 100% Cryptographic QR Verified</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Under Verification</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-hourglass-half"></i></div>
+                </div>
+                <div class="stat-value text-gold">1</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-clock me-1"></i> Revenue Inspector Field Audit</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">DigiLocker Synced</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                </div>
+                <div class="stat-value text-info">Synced</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-link me-1"></i> Aadhaar Vault Connected</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Processing SLA</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                </div>
+                <div class="stat-value text-success">48 Hrs</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check me-1"></i> Citizen Charter Compliant</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Certificates Registry -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Registered Official Digital Certificates</h2>
+                <p class="dash-card-subtitle">Download tamper-evident PDF credentials or verify digitally using the State Public Key Infrastructure.</p>
+            </div>
+            <div class="dash-search-box" style="max-width: 280px;">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="certSearch" class="form-control" placeholder="Search by Cert ID or name..." onkeyup="filterCertificates()">
+            </div>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="certTable">
+                    <thead>
+                        <tr>
+                            <th>Certificate Type &amp; ID</th>
+                            <th>Issued To / Subject</th>
+                            <th>Issuing Authority &amp; Ward</th>
+                            <th>Valid Through</th>
+                            <th>Security Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-baby me-2 text-gold"></i>Certified Birth Extract</div>
+                                <div class="text-white-50 small">ID: SLM-BRT-1994-04128</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Rajesh Kumar S</div>
+                                <div class="text-white-50 small">Father: Sundaram K &bull; Ward 1</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Civil Registrar of Births &amp; Deaths</div>
+                                <div class="text-white-50 small">Hasthampatti Zone, Salem</div>
+                            </td>
+                            <td><span class="text-white">Perpetual</span></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-shield-halved me-1"></i> Digitally Signed</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Certified Birth Certificate Extract (PDF) with Digital QR Seal...');">
+                                    <i class="fa-solid fa-file-pdf me-1"></i> Download PDF
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-file-shield me-2 text-info"></i>Property Tax Clearance NOC</div>
+                                <div class="text-white-50 small">ID: SLM-PTC-2026-9042</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Assessment #SLM-PTAX-2026-8812</div>
+                                <div class="text-white-50 small">MMR Complex, Chinna Thirupathi</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Revenue Department, Circle IV</div>
+                                <div class="text-white-50 small">Salem Municipal Corporation</div>
+                            </td>
+                            <td><span class="text-white">31-Mar-2027</span></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> No Arrears Verified</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Stamped Property Tax Clearance Certificate (PDF)...');">
+                                    <i class="fa-solid fa-file-pdf me-1"></i> Download PDF
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-shop me-2 text-warning"></i>Commercial Trade License</div>
+                                <div class="text-white-50 small">ID: SLM-TRD-2025-5021</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Sri Gokulam Provisions &amp; Retail</div>
+                                <div class="text-white-50 small">Shop #12, Chinna Thirupathi Main Rd</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Health &amp; Sanitary Inspectorate</div>
+                                <div class="text-white-50 small">Ward 1, Salem Corporation</div>
+                            </td>
+                            <td><span class="text-white">31-Mar-2027</span></td>
+                            <td>
+                                <span class="badge-blue"><i class="fa-solid fa-award me-1"></i> Renewed &amp; Valid</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Commercial Trade License Certificate (PDF)...');">
+                                    <i class="fa-solid fa-file-pdf me-1"></i> Download PDF
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-water me-2 text-info"></i>UGD Sanitary Connection NOC</div>
+                                <div class="text-white-50 small">ID: SLM-ENG-UGD-2025-109</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Residential Sewer Tap Line</div>
+                                <div class="text-white-50 small">Pipe Connection #UGD-4412-B</div>
+                            </td>
+                            <td>
+                                <div class="text-white">City Engineer, Water &amp; Drainage</div>
+                                <div class="text-white-50 small">Head Office, Salem</div>
+                            </td>
+                            <td><span class="text-white">Perpetual</span></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-check me-1"></i> Sanctioned</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Underground Drainage Clearance NOC (PDF)...');">
+                                    <i class="fa-solid fa-file-pdf me-1"></i> Download PDF
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-house-chimney-user me-2 text-gold"></i>Income &amp; Asset Assessment Extract</div>
+                                <div class="text-white-50 small">ID: SLM-INC-2026-00441</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Rajesh Kumar S</div>
+                                <div class="text-white-50 small">Annual Assessment: ₹3,60,000</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Tahsildar &amp; Zonal Revenue Officer</div>
+                                <div class="text-white-50 small">Salem West Taluk</div>
+                            </td>
+                            <td><span class="text-warning">Under Review</span></td>
+                            <td>
+                                <span class="badge-amber"><i class="fa-solid fa-clock me-1"></i> Field Audit Pending</span>
+                            </td>
+                            <td>
+                                <button class="btn-outline-gold-sm" onclick="alert('Status: Inspection scheduled by Zonal Revenue Inspector on 15-Nov-2026.');">
+                                    <i class="fa-solid fa-eye me-1"></i> Track Audit
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Two-Column Row: Apply for New Certificate & QR Integrity Scanner Info -->
+    <div class="row g-4" id="applyCertificateCard">
+        <div class="col-lg-7">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Apply for Digital Civic Certificate</h2>
+                        <p class="dash-card-subtitle">Official applications are processed within 48 to 72 hours per the Salem Municipal Citizen Charter.</p>
+                    </div>
+                </div>
+                <div class="dash-card-body">
+                    <form onsubmit="handleApplyCert(event)">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Certificate Category <span class="text-danger">*</span></label>
+                                <select class="dash-select w-100" id="certCategory" required>
+                                    <option value="" disabled selected>Select Certificate Type</option>
+                                    <option value="Birth">Certified Birth Certificate Extract</option>
+                                    <option value="Death">Certified Death Certificate Extract</option>
+                                    <option value="NoDues">Property Tax No-Dues Clearance</option>
+                                    <option value="Trade">New / Renewal Trade License</option>
+                                    <option value="UGD">Underground Drainage (UGD) NOC</option>
+                                    <option value="StreetLight">Civic Infrastructure Feasibility NOC</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Applicant Aadhaar / Voter ID <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="XXXX-XXXX-4412" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Applicant Legal Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" value="Rajesh Kumar" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="dash-form-label">Jurisdiction Ward <span class="text-danger">*</span></label>
+                                <select class="dash-select w-100" required>
+                                    <option value="1" selected>Ward 1 - Chinna Thirupathi, Salem</option>
+                                    <option value="2">Ward 2 - Hasthampatti Zone</option>
+                                    <option value="3">Ward 3 - Fairlands</option>
+                                    <option value="4">Ward 4 - Suramangalam</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="dash-form-label">Supporting Document (PDF or JPG max 5MB)</label>
+                            <input type="file" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+                            <span class="text-white-50" style="font-size: 0.74rem;">Attach address proof, previous tax receipt, or birth declaration slip.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="dash-form-label">Remarks / Specific Request Details</label>
+                            <textarea class="form-control" rows="2" placeholder="Specify any hospital reference number, assessment deed volume, or urgency reason..."></textarea>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+                            <span class="text-white-50 small"><i class="fa-solid fa-shield-halved text-gold me-1"></i> Fee: ₹50.00 (Standard Statutory Charge)</span>
+                            <button type="submit" class="btn-gold-sm">
+                                <i class="fa-solid fa-paper-plane me-1"></i> Submit Application &amp; Pay Statutory Fee
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="dash-card mb-4">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-qrcode text-gold me-2"></i>256-Bit QR Verification</h2>
+                </div>
+                <div class="dash-card-body text-center py-4">
+                    <div class="p-3 bg-white rounded-3 d-inline-block shadow-sm mb-3">
+                        <i class="fa-solid fa-qrcode text-dark" style="font-size: 5rem;"></i>
+                    </div>
+                    <h6 class="text-white fw-bold mb-1">State Public Key Infrastructure</h6>
+                    <p class="text-white-50 small mb-3">All certificates issued by the Salem Municipal Corporation contain an asymmetric cryptographic hash verifiable by employers, banks, and passport authorities.</p>
+                    <button class="btn-outline-gold-sm w-100" onclick="alert('Opening Central Verification Portal (tnega.tn.gov.in)... Verification Engine Online.');">
+                        <i class="fa-solid fa-barcode-read me-1"></i> Verify Third-Party Certificate
+                    </button>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-circle-question text-info me-2"></i>Citizen Helpdesk SLA</h2>
+                </div>
+                <div class="dash-card-body">
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <i class="fa-solid fa-clock text-gold mt-1"></i>
+                        <div>
+                            <div class="text-white fw-semibold small">Birth &amp; Death Records</div>
+                            <div class="text-white-50" style="font-size: 0.76rem;">Issued within 24 hours if hospital notification is verified.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2 mb-3">
+                        <i class="fa-solid fa-clock text-gold mt-1"></i>
+                        <div>
+                            <div class="text-white fw-semibold small">Property Tax Clearances</div>
+                            <div class="text-white-50" style="font-size: 0.76rem;">Instant automatic download upon settlement of pending dues.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-2">
+                        <i class="fa-solid fa-phone text-success mt-1"></i>
+                        <div>
+                            <div class="text-white fw-semibold small">Helpline Assistance</div>
+                            <div class="text-white-50" style="font-size: 0.76rem;">Dial +91 9876543210 (Toll-Free, 9:00 AM - 6:00 PM IST).</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterCertificates() {
+            var input = document.getElementById('certSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById('certTable');
+            var tr = table.getElementsByTagName('tr');
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                tr[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        function handleApplyCert(e) {
+            e.preventDefault();
+            var cat = document.getElementById('certCategory').value;
+            alert('Application for ' + cat + ' Certificate submitted successfully!\nTracking Ack Ref: SLM-ACK-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nEstimated dispatch: 48 Hours to your digital vault.');
+        }
+    </script>
+</body>
+</html>

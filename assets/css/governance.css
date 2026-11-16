@@ -1,0 +1,63 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - GOVERNANCE STYLES
+   File: assets/css/governance.css
+   Theme: Municipal Corporation Website (Council & Governance)
+   =================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+main, section, .page-banner {
+  overflow-x: clip;
+  overflow-y: visible;
+  max-width: 100%;
+}
+
+.mayor-message-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  border-left: 5px solid var(--civic-secondary);
+  border-radius: var(--civic-radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--civic-shadow-md);
+  position: relative;
+}
+
+.resolution-item-card {
+  background: #ffffff;
+  border-radius: var(--civic-radius-md);
+  border: 1px solid var(--civic-border);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  transition: var(--transition-smooth);
+  margin-bottom: 0.85rem;
+  width: 100%;
+}
+
+.resolution-item-card:hover {
+  border-color: var(--civic-primary);
+  box-shadow: var(--civic-shadow-sm);
+  transform: translateX(4px);
+}
+
+.resolution-id {
+  font-family: var(--civic-font-heading);
+  font-weight: 700;
+  color: var(--civic-primary);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+  .mayor-message-box {
+    padding: 1.5rem 1.25rem !important;
+  }
+  .resolution-item-card {
+    padding: 1rem 0.85rem !important;
+  }
+}

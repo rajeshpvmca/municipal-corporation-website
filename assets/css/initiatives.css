@@ -1,0 +1,86 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - INITIATIVES STYLES
+   File: assets/css/initiatives.css
+   Theme: Municipal Corporation Website (Smart & Green City Projects)
+   =================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+main, section, .page-banner {
+  overflow-x: clip;
+  overflow-y: visible;
+  max-width: 100%;
+}
+
+.initiative-feature-card {
+  background: #ffffff;
+  border-radius: var(--civic-radius-xl);
+  border: 1px solid var(--civic-border);
+  overflow: hidden;
+  box-shadow: var(--civic-shadow-sm);
+  transition: var(--transition-smooth);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.initiative-feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--civic-shadow-hover);
+}
+
+.initiative-img-holder {
+  height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.initiative-img-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.initiative-feature-card:hover .initiative-img-holder img {
+  transform: scale(1.08);
+}
+
+.initiative-status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(5, 150, 105, 0.9);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+}
+
+.eco-metric-progress {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #e2e8f0;
+  overflow: hidden;
+  margin: 0.75rem 0;
+}
+
+.eco-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+  border-radius: 10px;
+}
+
+.smart-stat-gauge {
+  background: #f8fafc;
+  border: 1px solid var(--civic-border);
+  border-radius: var(--civic-radius-md);
+  padding: 1.25rem;
+  text-align: center;
+}

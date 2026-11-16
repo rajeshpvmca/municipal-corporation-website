@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ward Grievances Dispatch | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Ward Grievances Dispatch &amp; SLA Management</h1>
+            <p class="dash-page-subtitle">Centralized civic complaints triage, automated field crew dispatch, and geotagged resolution audits.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-amber"><i class="fa-solid fa-clock-rotate-left me-1"></i> Live SLA Monitor</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Exporting SLA Compliance Audit Report for All 60 Wards (CSV)...');">
+                <i class="fa-solid fa-file-csv me-1"></i> Export SLA Report
+            </button>
+            <button class="btn-gold-sm" onclick="alert('Triggering Bulk SMS Alert to all On-Duty Zonal Field Engineers...');">
+                <i class="fa-solid fa-paper-plane me-1"></i> Ping Field Teams
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 High-Priority SLA Metrics -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Total Open Tickets</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-inbox"></i></div>
+                </div>
+                <div class="stat-value text-white">42</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-layer-group me-1"></i> 14 Wards Active</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Overdue SLA Breaches</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                </div>
+                <div class="stat-value text-danger">3</div>
+                <div class="stat-meta text-danger"><i class="fa-solid fa-bell me-1"></i> Escalated to Commissioner</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Avg Resolution SLA</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-stopwatch"></i></div>
+                </div>
+                <div class="stat-value text-gold">21.4 Hrs</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check me-1"></i> Target &lt; 24h Met</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Citizen CSAT Score</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="stat-value text-success">94.6%</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-thumbs-up me-1"></i> Post-Resolution Rating</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter & Triage Bar -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-body py-3">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-4">
+                    <div class="dash-search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="ticketSearch" class="form-control" placeholder="Search ticket #, citizen name, phone, or landmark..." onkeyup="filterTickets()">
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <select class="dash-select w-100" id="filterWard" onchange="filterTickets()">
+                        <option value="">All Municipal Wards</option>
+                        <option value="Ward 1">Ward 1 - Chinna Thirupathi</option>
+                        <option value="Ward 2">Ward 2 - Hasthampatti Central</option>
+                        <option value="Ward 3">Ward 3 - Fairlands &amp; Alagapuram</option>
+                        <option value="Ward 4">Ward 4 - Suramangalam / Junction</option>
+                        <option value="Ward 5">Ward 5 - Ammapet Zone</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-3">
+                    <select class="dash-select w-100" id="filterDept" onchange="filterTickets()">
+                        <option value="">All Departments</option>
+                        <option value="Water Supply">Water Supply &amp; Drainage</option>
+                        <option value="Streetlights">Electrical &amp; Streetlights</option>
+                        <option value="Sanitation">Public Health &amp; Sanitation</option>
+                        <option value="Roads">Engineering &amp; Roads</option>
+                        <option value="Town Planning">Town Planning &amp; Encroachment</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="dash-select w-100" id="filterStatus" onchange="filterTickets()">
+                        <option value="">All Statuses</option>
+                        <option value="Critical">Critical &lt; 4h</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved Today</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Grievance Queue Table -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Live Dispatch Queue &amp; Field Allocation</h2>
+                <p class="dash-card-subtitle">Real-time status updates synced with field mobile apps used by sanitary officers and junior engineers.</p>
+            </div>
+            <span class="badge-blue"><i class="fa-solid fa-truck-fast me-1"></i> 14 Teams Live</span>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="ticketsTable">
+                    <thead>
+                        <tr>
+                            <th>Ticket ID &amp; Complainant</th>
+                            <th>Ward &amp; Department</th>
+                            <th>Issue Summary &amp; Landmark</th>
+                            <th>Assigned Engineer / Crew</th>
+                            <th>SLA Countdown</th>
+                            <th>Status &amp; Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9921</div>
+                                <div class="text-white-50 small">Rajesh Kumar (+91 9876543210)</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Ward 1</div>
+                                <div class="text-white-50 small">Water Supply</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Low Water Pressure / Pipe Leak</div>
+                                <div class="text-white-50 small">MMR Complex, Chinna Thirupathi (4-Inch Feeder Line)</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Er. S. Murugesan (AE)</div>
+                                <div class="text-white-50 small">Field Unit #1 Deployed</div>
+                            </td>
+                            <td>
+                                <span class="badge-red"><i class="fa-solid fa-clock me-1"></i> 2h 15m (Critical)</span>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="handleResolveTicket('SLM-GRV-2026-9921')">
+                                        <i class="fa-solid fa-check me-1"></i> Resolve
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="alert('Dispatching push notification & IVR reminder to Er. S. Murugesan.');">
+                                        <i class="fa-solid fa-bell"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9905</div>
+                                <div class="text-white-50 small">K. Shanmugam (+91 9443218765)</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Ward 1</div>
+                                <div class="text-white-50 small">Streetlights</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Phase Line Tripped (4 Poles Dark)</div>
+                                <div class="text-white-50 small">Vinayagar Kovil Street, Chinna Thirupathi</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Lineman Crew #3 (P. Selvam)</div>
+                                <div class="text-white-50 small">Ladder Van #08</div>
+                            </td>
+                            <td>
+                                <span class="badge-amber"><i class="fa-solid fa-clock me-1"></i> 5h 40m Remaining</span>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="handleResolveTicket('SLM-GRV-2026-9905')">
+                                        <i class="fa-solid fa-check me-1"></i> Resolve
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="alert('Viewing Lineman GPS Position: Chinna Thirupathi Main Road, 400m away.');">
+                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9870</div>
+                                <div class="text-white-50 small">Meenakshi A (+91 9789012345)</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Ward 2</div>
+                                <div class="text-white-50 small">Sanitation</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Drainage Overflow into Alleyway</div>
+                                <div class="text-white-50 small">Hasthampatti Bus Stand Backside</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Sanitary Insp. V. Ravi</div>
+                                <div class="text-white-50 small">Super Sucker Unit #4</div>
+                            </td>
+                            <td>
+                                <span class="badge-red"><i class="fa-solid fa-triangle-exclamation me-1"></i> SLA Breached (+45m)</span>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Escalating Incident #9870 to Executive Engineer (Health) for Immediate Override.');">
+                                        <i class="fa-solid fa-bolt me-1"></i> Escalate
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9831</div>
+                                <div class="text-white-50 small">R. Balaji (+91 9842233445)</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Ward 3</div>
+                                <div class="text-white-50 small">Roads</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Broken Stormwater Cover Slab</div>
+                                <div class="text-white-50 small">Fairlands Main Rd, opp State Bank</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Er. K. Natarajan (AE)</div>
+                                <div class="text-white-50 small">Pre-cast Concrete Batch Deployed</div>
+                            </td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> Resolved Today</span>
+                            </td>
+                            <td>
+                                <button class="btn-outline-gold-sm" onclick="alert('Viewing Geotagged Completion Photo: Heavy-duty 80mm RCC slab installed. Time: 11:32 AM IST.');">
+                                    <i class="fa-solid fa-camera me-1"></i> View Proof
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9799</div>
+                                <div class="text-white-50 small">Merchants Assoc (+91 9444109876)</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Ward 4</div>
+                                <div class="text-white-50 small">Town Planning</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Illegal Commercial Billboard Obstruction</div>
+                                <div class="text-white-50 small">Suramangalam Junction Pedestrian Walkway</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Town Planning Officer G. Mohan</div>
+                                <div class="text-white-50 small">Enforcement Squad #2</div>
+                            </td>
+                            <td>
+                                <span class="badge-amber"><i class="fa-solid fa-clock me-1"></i> 14h Left</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Notice issued under section 326 of Tamil Nadu Municipal Acts. Demolition crane scheduled for tonight.');">
+                                    <i class="fa-solid fa-gavel me-1"></i> Issue Order
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Dispatch Allocation Form -->
+    <div class="dash-card">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title"><i class="fa-solid fa-paper-plane text-gold me-2"></i>Instant Work Order &amp; Emergency Dispatch</h2>
+                <p class="dash-card-subtitle">Create rapid task orders for municipal squads without waiting for central council approval.</p>
+            </div>
+        </div>
+        <div class="dash-card-body">
+            <form onsubmit="handleQuickDispatch(event)">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-3">
+                        <label class="dash-form-label">Target Ward <span class="text-danger">*</span></label>
+                        <select class="dash-select w-100" required>
+                            <option value="1">Ward 1 - Chinna Thirupathi</option>
+                            <option value="2">Ward 2 - Hasthampatti</option>
+                            <option value="3">Ward 3 - Fairlands</option>
+                            <option value="4">Ward 4 - Suramangalam</option>
+                            <option value="5">Ward 5 - Ammapet</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="dash-form-label">Squad Category <span class="text-danger">*</span></label>
+                        <select class="dash-select w-100" id="dispatchSquad" required>
+                            <option value="Water Repair Unit #1">Water Pipe Rapid Repair Crew</option>
+                            <option value="Sanitation Jetting Squad">Sanitary Super Sucker &amp; Jetting</option>
+                            <option value="Electrical Lineman Van">Streetlight Repair &amp; Cable Crew</option>
+                            <option value="Road Pothole Bitumen Squad">Road Cold-Patch Bitumen Team</option>
+                            <option value="Anti-Dengue Fogging Team">Vector Control &amp; Fogging Squad</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="dash-form-label">Priority Level <span class="text-danger">*</span></label>
+                        <select class="dash-select w-100" required>
+                            <option value="Urgent">Emergency (2 Hour SLA)</option>
+                            <option value="High" selected>High (6 Hour SLA)</option>
+                            <option value="Standard">Standard (24 Hour SLA)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="dash-form-label">Lead Supervising Officer</label>
+                        <input type="text" class="form-control" value="AE S. Murugesan (Emp #SLM-4019)">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="dash-form-label">Site Specific Instructions / Geolocation Landmark <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" placeholder="Specify exact street number, nearest transformer/pillar, and mandatory equipment..." required>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+                    <span class="text-white-50 small"><i class="fa-solid fa-satellite text-info me-1"></i> System sends automated SMS push to assigned driver &amp; crew foreman.</span>
+                    <button type="submit" class="btn-gold-sm">
+                        <i class="fa-solid fa-truck-fast me-1"></i> Issue Work Order &amp; Dispatch Squad
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterTickets() {
+            var search = document.getElementById('ticketSearch').value.toUpperCase();
+            var ward = document.getElementById('filterWard').value.toUpperCase();
+            var dept = document.getElementById('filterDept').value.toUpperCase();
+            var status = document.getElementById('filterStatus').value.toUpperCase();
+
+            var table = document.getElementById('ticketsTable');
+            var tr = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                var matchSearch = !search || text.toUpperCase().indexOf(search) > -1;
+                var matchWard = !ward || text.toUpperCase().indexOf(ward) > -1;
+                var matchDept = !dept || text.toUpperCase().indexOf(dept) > -1;
+                var matchStatus = !status || text.toUpperCase().indexOf(status) > -1;
+
+                tr[i].style.display = (matchSearch && matchWard && matchDept && matchStatus) ? "" : "none";
+            }
+        }
+
+        function handleResolveTicket(ticketId) {
+            var remarks = prompt('Enter resolution remarks for Ticket ' + ticketId + ':\n(e.g., Replaced 4-inch valve, restored water pressure to 3.8 bar)');
+            if (remarks) {
+                alert('Ticket ' + ticketId + ' marked RESOLVED!\nSMS closure confirmation dispatched to citizen.\nAudit stamp recorded in Municipal Ledger.');
+                location.reload();
+            }
+        }
+
+        function handleQuickDispatch(e) {
+            e.preventDefault();
+            var squad = document.getElementById('dispatchSquad').value;
+            alert('Work Order #SLM-WO-' + Math.floor(1000 + Math.random() * 9000) + ' Generated!\nSquad: ' + squad + '\nGPS coordinates transmitted to crew dashboard.');
+        }
+    </script>
+</body>
+</html>

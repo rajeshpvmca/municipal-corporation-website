@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Municipal Tenders | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Live Municipal e-Tenders &amp; RFP Repository</h1>
+            <p class="dash-page-subtitle">Public works procurement published under the Tamil Nadu Transparency in Tenders Act. Empaneled vendors may download RFPs and submit cryptographically sealed bids.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-lock me-1"></i> Class I Digital Key Active</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Downloading Central Procurement Schedule & Pre-Bid Meeting Calendar Q3 (PDF)...');">
+                <i class="fa-solid fa-calendar-days me-1"></i> Pre-Bid Calendar
+            </button>
+            <button class="btn-gold-sm" onclick="alert('Connecting to Tamil Nadu e-Procurement Gateway (tntenders.gov.in)... Encrypted Session Initiated.');">
+                <i class="fa-solid fa-cloud-arrow-up me-1"></i> e-Tender Portal Sync
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 High-Level Metrics -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Open Tenders</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-file-contract"></i></div>
+                </div>
+                <div class="stat-value text-white">18</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-building me-1"></i> Salem Corporation Works</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Total Outlay Value</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                </div>
+                <div class="stat-value text-gold">₹64.5 Cr</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-chart-line me-1"></i> Infrastructure Capital Works</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Class-1 Matches</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-check-double"></i></div>
+                </div>
+                <div class="stat-value text-success">6 Tenders</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-certificate me-1"></i> Fully Eligible to Bid</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Upcoming Pre-Bid</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-users-rectangle"></i></div>
+                </div>
+                <div class="stat-value text-info">16-Nov</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-video me-1"></i> Hybrid Meeting in Council Hall</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter & Search Bar -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-body py-3">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-5">
+                    <div class="dash-search-box">
+                        <i class="fa-solid fa-search"></i>
+                        <input type="text" id="tndSearch" class="form-control" placeholder="Search by tender ref, project title, ward..." onkeyup="filterTenders()">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <select class="dash-select w-100" id="filterCat" onchange="filterTenders()">
+                        <option value="">All Categories &amp; Wings</option>
+                        <option value="Civil Works">Civil Infrastructure &amp; RCC</option>
+                        <option value="Roads">Asphalt Roads &amp; Kerbing</option>
+                        <option value="Water & Sewerage">Water Supply &amp; UGD Sewerage</option>
+                        <option value="Electrical">Smart Streetlights &amp; Solar</option>
+                        <option value="Sanitation">Solid Waste Processing &amp; Bio-CNG</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-3">
+                    <select class="dash-select w-100" id="filterValue" onchange="filterTenders()">
+                        <option value="">All Budget Ranges</option>
+                        <option value="Above ₹10 Cr">Above ₹10.0 Crore</option>
+                        <option value="₹1 Cr - ₹10 Cr">₹1.0 Cr to ₹10.0 Cr</option>
+                        <option value="Under ₹1 Cr">Under ₹1.0 Crore</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Live Tenders Table -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Live e-Tender Notifications &amp; RFP Dossiers</h2>
+                <p class="dash-card-subtitle">Encrypted tenders require Class III Digital Signature Certificate (DSC) for two-cover bid upload.</p>
+            </div>
+            <span class="badge-blue"><i class="fa-solid fa-shield-halved me-1"></i> e-Tender Act 1998</span>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="tndTable">
+                    <thead>
+                        <tr>
+                            <th>Tender Ref &amp; Date</th>
+                            <th>Project Title &amp; Scope</th>
+                            <th>Estimated Value (₹)</th>
+                            <th>EMD Deposit</th>
+                            <th>Submission Deadline</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#TND-2026-904</div>
+                                <div class="text-white-50 small">Issued: 02-Nov-2026</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Hasthampatti Multi-Level Car Parking Complex (G+4 RCC)</div>
+                                <div class="text-white-50 small">Civil Works &bull; Capacity: 350 Cars &bull; Zone 1 Hub</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹16,50,00,000</div></td>
+                            <td><span class="badge-gold">₹16,50,000</span></td>
+                            <td><span class="text-danger fw-bold"><i class="fa-solid fa-clock me-1"></i> 24-Nov-2026 (15:00 IST)</span></td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Downloading RFP Dossier for #TND-2026-904 (ZIP):\n- Volume I: Instructions to Bidders (ITB)\n- Volume II: Technical Specifications & Soil Test\n- Volume III: Bill of Quantities (BOQ Excel).');">
+                                        <i class="fa-solid fa-download me-1"></i> RFP (.ZIP)
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="handleBidModal('TND-2026-904', 'Hasthampatti Multi-Level Parking', '165000000')">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#TND-2026-912</div>
+                                <div class="text-white-50 small">Issued: 04-Nov-2026</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Suramangalam Bus Stand Terminal Modernization Phase I</div>
+                                <div class="text-white-50 small">Passenger Concourse, Solar Roofing &amp; 18 Bus Bays</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹9,20,00,000</div></td>
+                            <td><span class="badge-gold">₹9,20,000</span></td>
+                            <td><span class="text-warning fw-bold">02-Dec-2026 (15:00 IST)</span></td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Downloading RFP Dossier for #TND-2026-912 (ZIP including BOQ and CAD structural drawings)...');">
+                                        <i class="fa-solid fa-download me-1"></i> RFP (.ZIP)
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="handleBidModal('TND-2026-912', 'Suramangalam Terminal Modernization', '92000000')">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#TND-2026-920</div>
+                                <div class="text-white-50 small">Issued: 06-Nov-2026</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Chinna Thirupathi Lake Front Rejuvenation &amp; Jogging Walkway</div>
+                                <div class="text-white-50 small">Ward 1 &bull; Desilting, Embankment Bunding &amp; Smart Lighting</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹4,80,00,000</div></td>
+                            <td><span class="badge-gold">₹4,80,000</span></td>
+                            <td><span class="text-info fw-bold">08-Dec-2026 (15:00 IST)</span></td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Downloading RFP Dossier for #TND-2026-920 (ZIP with Landscape & Hydraulic specs)...');">
+                                        <i class="fa-solid fa-download me-1"></i> RFP (.ZIP)
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="handleBidModal('TND-2026-920', 'Chinna Thirupathi Lake Rejuvenation', '48000000')">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#TND-2026-928</div>
+                                <div class="text-white-50 small">Issued: 09-Nov-2026</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Supply &amp; Commissioning of 10,000 LoRaWAN Smart Water Meters</div>
+                                <div class="text-white-50 small">Water Supply Wing &bull; Chinna Thirupathi &amp; Hasthampatti Wards</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹3,40,00,000</div></td>
+                            <td><span class="badge-gold">₹3,40,000</span></td>
+                            <td><span class="text-info fw-bold">12-Dec-2026 (15:00 IST)</span></td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Downloading RFP Dossier for #TND-2026-928 (IoT Metering specifications)...');">
+                                        <i class="fa-solid fa-download me-1"></i> RFP (.ZIP)
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="handleBidModal('TND-2026-928', 'LoRaWAN Smart Water Meters', '34000000')">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#TND-2026-935</div>
+                                <div class="text-white-50 small">Issued: 11-Nov-2026</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Annual Maintenance Contract for Bituminous Roads (Zone 1 &amp; 2)</div>
+                                <div class="text-white-50 small">Roads Wing &bull; Cold Mix Patching, Micro-surfacing &amp; Kerb Painting</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹2,10,00,000</div></td>
+                            <td><span class="badge-gold">₹2,10,000</span></td>
+                            <td><span class="text-info fw-bold">15-Dec-2026 (15:00 IST)</span></td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button class="btn-gold-sm" onclick="alert('Downloading RFP Dossier for #TND-2026-935 (Road AMC Schedule)...');">
+                                        <i class="fa-solid fa-download me-1"></i> RFP (.ZIP)
+                                    </button>
+                                    <button class="btn-outline-gold-sm" onclick="handleBidModal('TND-2026-935', 'Road AMC Zone 1 & 2', '21000000')">
+                                        <i class="fa-solid fa-gavel"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bid Submission Help & Procurement Guidelines -->
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="dash-card h-100">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-shield-halved text-gold me-2"></i>Two-Cover Bid Protocol</h2>
+                </div>
+                <div class="dash-card-body">
+                    <div class="d-flex align-items-start gap-3 mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-folder-closed text-gold"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">Cover A: Technical Bid &amp; Statutory EMD</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Requires ₹5 Cr Solvency Certificate, GST clearances, EPF/ESI statements, and 5-year similar work experience proofs.</div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3">
+                        <div class="stat-icon-box" style="width: 32px; height: 32px; font-size: 0.85rem;"><i class="fa-solid fa-file-invoice text-info"></i></div>
+                        <div>
+                            <div class="text-white fw-semibold small">Cover B: Financial BOQ Bid</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Encrypted rates per item. Cover B is automatically decrypted only for bidders who qualify in technical scrutiny.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="dash-card h-100">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fa-solid fa-headset text-success me-2"></i>Salem e-Tender Helpdesk</h2>
+                </div>
+                <div class="dash-card-body">
+                    <p class="text-white-50 small mb-2">Need assistance with DSC token registration, EMD bank guarantee format, or pre-bid queries?</p>
+                    <div class="fw-bold text-white small mb-1"><i class="fa-solid fa-building-columns text-gold me-2"></i>Superintending Engineer Office (Procurement Cell)</div>
+                    <div class="text-white-50 small mb-2">MMR Complex, Chinna Thirupathi, Salem - 636008</div>
+                    <div class="text-gold small fw-bold"><i class="fa-solid fa-phone me-2"></i>+91 9876543210 (Direct Tender Helpline)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterTenders() {
+            var search = document.getElementById('tndSearch').value.toUpperCase();
+            var cat = document.getElementById('filterCat').value.toUpperCase();
+            var val = document.getElementById('filterValue').value.toUpperCase();
+
+            var table = document.getElementById('tndTable');
+            var tr = table.getElementsByTagName('tr');
+
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                var matchSearch = !search || text.toUpperCase().indexOf(search) > -1;
+                var matchCat = !cat || text.toUpperCase().indexOf(cat) > -1;
+                var matchVal = true;
+                if (val === 'ABOVE ₹10 CR') matchVal = text.indexOf('16,50,00,000') > -1;
+                if (val === '₹1 CR - ₹10 CR') matchVal = (text.indexOf('9,20,00,000') > -1 || text.indexOf('4,80,00,000') > -1 || text.indexOf('3,40,00,000') > -1 || text.indexOf('2,10,00,000') > -1);
+
+                tr[i].style.display = (matchSearch && matchCat && matchVal) ? "" : "none";
+            }
+        }
+
+        function handleBidModal(ref, title, estVal) {
+            var bid = prompt('Enter your commercial bid quote for ' + ref + ' (' + title + ')\nEstimate: ₹' + (estVal/10000000).toFixed(2) + ' Cr\nEnter proposed bid amount in INR:');
+            if (bid) {
+                alert('Commercial bid of ₹' + bid + ' submitted successfully for Tender #' + ref + '!\nCryptographic DSC Token Signed.\nTracking Ref: SLM-BID-2026-' + Math.floor(1000 + Math.random() * 9000));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - CONTACT STYLES
+   File: assets/css/contact.css
+   Theme: Municipal Corporation Website (Citizen Redressal & Ward Map)
+   =================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+main, section, .page-banner {
+  overflow-x: clip;
+  overflow-y: visible;
+  max-width: 100%;
+}
+
+.emergency-hotline-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fff1f2 100%);
+  border: 1.5px solid #fecdd3;
+  border-radius: var(--civic-radius-lg);
+  padding: 1.25rem 1rem;
+  box-shadow: var(--civic-shadow-sm);
+  transition: var(--transition-smooth);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.emergency-hotline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--civic-shadow-md);
+  border-color: #f43f5e;
+}
+
+.hotline-icon {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 12px;
+  background: #ffe4e6;
+  color: #e11d48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.ward-office-card {
+  background: #ffffff;
+  border: 1px solid var(--civic-border);
+  border-radius: var(--civic-radius-md);
+  padding: 1.5rem 1.25rem;
+  box-shadow: var(--civic-shadow-xs);
+  transition: var(--transition-smooth);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ward-office-card:hover {
+  border-color: var(--civic-primary);
+  box-shadow: var(--civic-shadow-md);
+  transform: translateY(-3px);
+}
+
+.map-container-mock {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--civic-radius-xl);
+  overflow: hidden;
+  border: 1.5px solid var(--civic-border);
+  position: relative;
+  background-color: #e2e8f0;
+}
+
+.map-overlay-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.25rem;
+  border-radius: var(--civic-radius-md);
+  box-shadow: var(--civic-shadow-lg);
+  z-index: 5;
+  max-width: 300px;
+}
+
+@media (max-width: 575.98px) {
+  .map-overlay-badge {
+    position: static !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem;
+    box-shadow: var(--civic-shadow-sm);
+  }
+  .emergency-hotline-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+  .ward-office-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+}

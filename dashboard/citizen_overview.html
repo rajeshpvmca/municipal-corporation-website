@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Overview | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Citizen Self-Service Overview</h1>
+            <p class="dash-page-subtitle">Welcome back, <strong>Rajesh Kumar</strong> &bull; Ward 1 (Chinna Thirupathi, Salem) &bull; Citizen ID: <strong>MCC-CTZ-2026-8812</strong></p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-shield-check me-1"></i> KYC Verified Resident</span>
+            <span class="badge-gold"><i class="fa-solid fa-star me-1"></i> Civic Rebate Eligible</span>
+        </div>
+    </div>
+
+    <!-- Welcome Action Banner -->
+    <div class="dash-welcome-banner">
+        <div class="row align-items-center g-3">
+            <div class="col-12 col-md-8">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="user-avatar flex-shrink-0" style="width: 54px; height: 54px; font-size: 1.4rem;">R</div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+                            <h5 class="fw-bold text-white mb-0">Property Assessment #SLM-PTAX-2026-8812</h5>
+                            <span class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 px-2 py-0 small">Fully Settled</span>
+                        </div>
+                        <p class="text-white-50 small mb-0 mt-1">Your early property tax payment credited a 5% civic rebate (₹212.50) into your annual utility ledger.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 text-md-end">
+                <a href="citizen_bills.html" class="btn-gold-sm">
+                    <i class="fa-solid fa-receipt me-1"></i> View Tax Ledger
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 Quick Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Property Tax FY 26-27</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-landmark"></i></div>
+                </div>
+                <div class="stat-value text-success">₹0.00</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check-double me-1"></i> 100% Cleared (5% Rebate)</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Water Utility Due</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+                </div>
+                <div class="stat-value text-white">₹420.00</div>
+                <div class="stat-meta text-danger"><i class="fa-solid fa-clock me-1"></i> Due by 15 Dec 2026</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Active Grievances</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-headset"></i></div>
+                </div>
+                <div class="stat-value text-warning">1 Ticket</div>
+                <div class="stat-meta text-warning"><i class="fa-solid fa-wrench me-1"></i> Field Engineer Dispatched</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Digital Extracts</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-certificate"></i></div>
+                </div>
+                <div class="stat-value text-info">3 Issued</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-qrcode me-1"></i> Cryptographic QR Verified</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Tickets & Recent Activities Grid -->
+    <div class="row g-4 mb-4">
+        <!-- Col 1: Live Grievance SLA Tracker -->
+        <div class="col-12 col-lg-7">
+            <div class="dash-content-box h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h5 class="box-title">Ward 1 Real-Time Grievance Tracker</h5>
+                        <p class="box-desc mb-0">Live status of municipal remediation tickets filed under your Aadhaar profile.</p>
+                    </div>
+                    <a href="citizen_grievances.html" class="btn-outline-gold-sm">+ File New</a>
+                </div>
+
+                <div class="p-3 rounded-3 mb-3" style="background: rgba(10, 54, 92, 0.45); border: 1px solid rgba(217, 119, 6, 0.3);">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge-blue">MCC-2026-9014</span>
+                        <span class="badge-amber"><i class="fa-solid fa-clock me-1"></i> In Progress (65%)</span>
+                    </div>
+                    <h6 class="fw-bold text-white mb-1">Smart Streetlight Replacement (Hasthampatti Main Rd)</h6>
+                    <p class="text-white-50 small mb-2">Assigned Unit: <strong>Ward 2 Electrical Rapid Team</strong> &bull; Filed: 08 Nov 2026</p>
+                    <div class="dash-progress-wrap mb-2">
+                        <div class="dash-progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center small text-white-50">
+                        <span>Technician: Eng. Suresh M. (+91 9876543210)</span>
+                        <span>SLA Resolution: 14 Nov 2026</span>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-3" style="background: rgba(4, 14, 26, 0.85); border: 1px solid rgba(10, 54, 92, 0.3);">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge-purple">MCC-2026-8842</span>
+                        <span class="badge-green"><i class="fa-solid fa-check-circle me-1"></i> Closed &amp; Verified</span>
+                    </div>
+                    <h6 class="fw-bold text-white mb-1">Pothole Bitumen Patching (Ammapet Main Rd Junction)</h6>
+                    <p class="text-white-50 small mb-0">Road surface inspected and sealed by Town Works Inspector. Closed on 09 Nov 2026.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Col 2: Pending Bills & Quick Pay -->
+        <div class="col-12 col-lg-5">
+            <div class="dash-content-box h-100">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div>
+                        <h5 class="box-title">Pending Invoices</h5>
+                        <p class="box-desc mb-0">Secure UPI &amp; NetBanking Gateway</p>
+                    </div>
+                    <a href="citizen_bills.html" class="btn-outline-gold-sm">View All</a>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                    <div class="p-3 rounded-3 d-flex align-items-center justify-content-between" style="background: rgba(10, 54, 92, 0.35); border: 1px solid rgba(10, 54, 92, 0.5);">
+                        <div>
+                            <div class="fw-bold text-white small">Water Supply Bill (Meter #4419)</div>
+                            <div class="text-white-50 small">Cycle: Oct - Nov 2026 &bull; ₹420.00</div>
+                            <span class="badge-red mt-1 d-inline-block">Due 15 Dec 2026</span>
+                        </div>
+                        <button class="btn-gold-sm" onclick="alert('Proceeding to Secure Municipal Payment Gateway (Bill #BILL-WAT-2026-881 for ₹420.00)...');">
+                            Pay Now
+                        </button>
+                    </div>
+
+                    <div class="p-3 rounded-3 d-flex align-items-center justify-content-between" style="background: rgba(10, 54, 92, 0.35); border: 1px solid rgba(10, 54, 92, 0.5);">
+                        <div>
+                            <div class="fw-bold text-white small">Trade License Annual Renewal</div>
+                            <div class="text-white-50 small">Ref: TRD-2026-104 &bull; ₹1,450.00</div>
+                            <span class="badge-amber mt-1 d-inline-block">Due 28 Dec 2026</span>
+                        </div>
+                        <button class="btn-gold-sm" onclick="alert('Proceeding to Trade License Renewal Gateway (₹1,450.00)...');">
+                            Renew
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 rounded-3 text-center" style="background: rgba(217, 119, 6, 0.12); border: 1px dashed rgba(217, 119, 6, 0.35);">
+                    <span class="small text-white-50 d-block mb-1">Need assistance with your property meter?</span>
+                    <a href="../contact.html" class="auth-gold-link small fw-bold">Contact Chinna Thirupathi Ward Desk &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

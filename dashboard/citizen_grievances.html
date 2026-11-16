@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grievance Redressal | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Citizen Grievance &amp; Service Redressal Portal</h1>
+            <p class="dash-page-subtitle">File municipal complaints with geotagged landmarks and track field engineer SLA resolution in real-time.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-gold"><i class="fa-solid fa-headset me-1"></i> 24/7 Redressal Helpline: +91 9876543210</span>
+        </div>
+    </div>
+
+    <!-- 4 Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Total Lodged</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-ticket"></i></div>
+                </div>
+                <div class="stat-value text-white">4 Tickets</div>
+                <div class="stat-meta text-white-50"><i class="fa-solid fa-history me-1"></i> Since 01 Jan 2026</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">In Progress</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                </div>
+                <div class="stat-value text-warning">1 Ticket</div>
+                <div class="stat-meta text-warning"><i class="fa-solid fa-truck-pickup me-1"></i> Field Unit Active</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Remediated &amp; Closed</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+                <div class="stat-value text-success">3 Tickets</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-thumbs-up me-1"></i> 100% Citizen Satisfaction</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Average SLA Time</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-stopwatch"></i></div>
+                </div>
+                <div class="stat-value text-info">36.4 Hrs</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-bolt me-1"></i> 12 Hrs Faster than SLA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Lodge Complaint Form -->
+    <div class="dash-content-box mb-4">
+        <h5 class="box-title">Lodge New Municipal Service Request</h5>
+        <p class="box-desc">Submit civic complaints regarding sanitation, road hazards, streetlights, or water mains directly to your zonal officer.</p>
+
+        <form onsubmit="event.preventDefault(); alert('Grievance logged successfully! Your ticket ID is MCC-2026-9941. An SMS confirmation with field technician details has been sent to +91 9876543210.'); this.reset();">
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <label class="form-label text-white-50 small fw-bold">Grievance Category</label>
+                    <select class="dash-select w-100" required>
+                        <option value="" selected disabled>Select Category...</option>
+                        <option value="streetlight">Smart Streetlight / Electrical Pole Fault</option>
+                        <option value="water">Water Supply Pipe Burst / Low Pressure</option>
+                        <option value="road">Pothole / Road Surface Collapse</option>
+                        <option value="sanitation">Garbage Overflow / Solid Waste Uncollected</option>
+                        <option value="drainage">Stormwater Culvert Blockage / Flooding</option>
+                        <option value="health">Mosquito Fogging / Public Health Request</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label class="form-label text-white-50 small fw-bold">Ward Jurisdiction (Salem)</label>
+                    <select class="dash-select w-100" required>
+                        <option value="ward-1" selected>Ward 1 &bull; Chinna Thirupathi</option>
+                        <option value="ward-2">Ward 2 &bull; Hasthampatti</option>
+                        <option value="ward-3">Ward 3 &bull; Suramangalam</option>
+                        <option value="ward-4">Ward 4 &bull; Ammapet</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label class="form-label text-white-50 small fw-bold">Exact Street / Landmark Location</label>
+                    <input type="text" class="dash-search-input w-100" placeholder="e.g. Near MMR Complex, 3rd Cross Street" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label text-white-50 small fw-bold">Incident Description &amp; Specific Details</label>
+                    <textarea class="dash-search-input w-100" rows="3" placeholder="Provide clear details regarding the issue (e.g. water leaking on road for 2 days, fixture sparking at pole #14)..." required></textarea>
+                </div>
+                <div class="col-12 text-end">
+                    <button type="submit" class="btn-gold-sm">
+                        <i class="fa-solid fa-paper-plane me-1"></i> Submit Official Grievance Ticket
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Active Tickets Table -->
+    <div class="dash-content-box">
+        <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+            <div>
+                <h5 class="box-title">Grievance Ticket History &amp; Field Dispatch Logs</h5>
+                <p class="box-desc mb-0">Track live remediation stages, field officer inspection reports, and closure OTPs.</p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <select class="dash-select" id="statusFilter" onchange="alert('Filtering tickets by ' + this.value);">
+                    <option value="all">All Statuses</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="dash-table">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Category &amp; Issue</th>
+                        <th>Ward &amp; Location</th>
+                        <th>Date Filed</th>
+                        <th>Assigned Field Unit</th>
+                        <th>SLA Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong class="text-gold">MCC-2026-9014</strong></td>
+                        <td>
+                            <div class="fw-bold text-white">Smart LED Streetlight Failure</div>
+                            <small class="text-white-50">Pole fixture #SL-104 flickering and dead</small>
+                        </td>
+                        <td>Ward 2 &bull; Hasthampatti Main Rd</td>
+                        <td>08 Nov 2026</td>
+                        <td>
+                            <div class="text-white fw-bold">Eng. Suresh M.</div>
+                            <small class="text-white-50">+91 9876543210 (Electrical Unit)</small>
+                        </td>
+                        <td><span class="badge-amber"><i class="fa-solid fa-clock me-1"></i> In Progress (SLA: 14 Nov)</span></td>
+                        <td>
+                            <button class="btn-outline-gold-sm" onclick="alert('Viewing Field Log for MCC-2026-9014: Replacement fixture dispatched from Salem Central Store on 10 Nov.');">
+                                <i class="fa-solid fa-list-check me-1"></i> View Log
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong class="text-gold">MCC-2026-8842</strong></td>
+                        <td>
+                            <div class="fw-bold text-white">Road Pothole Surface Patching</div>
+                            <small class="text-white-50">3-foot trench near junction after storm</small>
+                        </td>
+                        <td>Ward 4 &bull; Ammapet Main Rd</td>
+                        <td>04 Nov 2026</td>
+                        <td>
+                            <div class="text-white fw-bold">Eng. Rajesh K.</div>
+                            <small class="text-white-50">Town Roads Division #1</small>
+                        </td>
+                        <td><span class="badge-green"><i class="fa-solid fa-check-circle me-1"></i> Remediated</span></td>
+                        <td>
+                            <button class="btn-outline-gold-sm" onclick="alert('Viewing Resolution Certificate: Pothole sealed with polymer bitumen. Verified by Ward Councillor.');">
+                                <i class="fa-solid fa-certificate text-success me-1"></i> Resolution
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong class="text-gold">MCC-2026-7712</strong></td>
+                        <td>
+                            <div class="fw-bold text-white">Water Main Leakage &amp; Pressure Drop</div>
+                            <small class="text-white-50">Pipeline joint fracture at Chinna Thirupathi cross</small>
+                        </td>
+                        <td>Ward 1 &bull; Chinna Thirupathi</td>
+                        <td>19 Oct 2026</td>
+                        <td>
+                            <div class="text-white fw-bold">Salem Water Rapid Team #2</div>
+                            <small class="text-white-50">Water Supply Board</small>
+                        </td>
+                        <td><span class="badge-green"><i class="fa-solid fa-check-circle me-1"></i> Remediated</span></td>
+                        <td>
+                            <button class="btn-outline-gold-sm" onclick="alert('Viewing Resolution: High-pressure sleeve valve replaced. Normal pressure restored (1.8 bar).');">
+                                <i class="fa-solid fa-certificate text-success me-1"></i> Resolution
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong class="text-gold">MCC-2026-6540</strong></td>
+                        <td>
+                            <div class="fw-bold text-white">Door-to-Door Waste Bin Request</div>
+                            <small class="text-white-50">Replacement of damaged wet/dry segregated bin</small>
+                        </td>
+                        <td>Ward 1 &bull; Chinna Thirupathi</td>
+                        <td>28 Sep 2026</td>
+                        <td>
+                            <div class="text-white fw-bold">Ward 1 Sanitation Supervisor</div>
+                            <small class="text-white-50">Environmental Health Unit</small>
+                        </td>
+                        <td><span class="badge-green"><i class="fa-solid fa-check-circle me-1"></i> Remediated</span></td>
+                        <td>
+                            <button class="btn-outline-gold-sm" onclick="alert('Viewing Resolution: New RFID-tagged twin bins delivered to resident.');">
+                                <i class="fa-solid fa-certificate text-success me-1"></i> Resolution
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Civic Portal | Metropolitan Civic Municipal Corporation</title>
+    <meta name="description" content="Unified Digital Municipal Portal for Metropolitan Citizens, Civic Officials, and Contractors. Access property tax, grievance redressal, vital certificates, and tender procurement.">
+    <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+
+    <!-- Fonts: Outfit, Plus Jakarta Sans & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    
+    <!-- Custom CSS (External styles - No inline style block) -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+
+<body class="dash-shell">
+    <!-- Subtle Theme Navy & Gold Ambient Backlight -->
+    <div class="position-fixed top-0 start-0 w-100 h-100 pointer-events-none"
+        style="background: radial-gradient(circle at top right, rgba(217, 119, 6, 0.12) 0%, transparent 45%), radial-gradient(circle at bottom left, rgba(10, 54, 92, 0.35) 0%, transparent 45%); z-index: -1;">
+    </div>
+
+    <!-- Sidebar -->
+    <div class="dash-sidebar" id="dashSidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-header-logo d-flex align-items-center justify-content-center text-decoration-none" aria-label="Metropolitan Civic Municipal Corporation">
+                <div class="header-logo-styled" aria-label="Stackly Logo"></div>
+            </a>
+        </div>
+        
+        <div class="sidebar-nav"> 
+            
+            <!-- 1. Citizen Navigation (5 Sub-Pages) -->
+            <div id="navCitizen" style="display:none">
+                <p class="nav-section-title">Citizen e-Services</p>
+                <a class="nav-item-dash active" data-page="citizen_overview" href="dashboard/citizen_overview.html">
+                    <span class="material-symbols-outlined">space_dashboard</span> Overview &amp; Requests
+                </a>
+                <a class="nav-item-dash" data-page="citizen_bills" href="dashboard/citizen_bills.html">
+                    <span class="material-symbols-outlined">receipt_long</span> My Bills &amp; Taxes
+                </a>
+                <a class="nav-item-dash" data-page="citizen_grievances" href="dashboard/citizen_grievances.html">
+                    <span class="material-symbols-outlined">support_agent</span> Grievance Redressal
+                </a>
+                <a class="nav-item-dash" data-page="citizen_services" href="dashboard/citizen_services.html">
+                    <span class="material-symbols-outlined">verified_user</span> Vital Certificates
+                </a>
+                <a class="nav-item-dash" data-page="citizen_permits" href="dashboard/citizen_permits.html">
+                    <span class="material-symbols-outlined">domain_verification</span> Building &amp; NOC Permits
+                </a>
+            </div>
+
+            <!-- 2. Official Navigation (5 Sub-Pages) -->
+            <div id="navOfficial" style="display:none">
+                <p class="nav-section-title">Civic Administration</p>
+                <a class="nav-item-dash active" data-page="official_overview" href="dashboard/official_overview.html">
+                    <span class="material-symbols-outlined">analytics</span> City Operations Hub
+                </a>
+                <a class="nav-item-dash" data-page="official_grievances" href="dashboard/official_grievances.html">
+                    <span class="material-symbols-outlined">assignment_late</span> Ward Ticket Dispatch
+                </a>
+                <a class="nav-item-dash" data-page="official_revenue" href="dashboard/official_revenue.html">
+                    <span class="material-symbols-outlined">account_balance</span> Treasury &amp; Tax Inflow
+                </a>
+                <a class="nav-item-dash" data-page="official_inspections" href="dashboard/official_inspections.html">
+                    <span class="material-symbols-outlined">engineering</span> Engineering Site Audits
+                </a>
+                <a class="nav-item-dash" data-page="official_bulletins" href="dashboard/official_bulletins.html">
+                    <span class="material-symbols-outlined">newspaper</span> Council Gazettes &amp; Notices
+                </a>
+            </div>
+
+            <!-- 3. Contractor Navigation (5 Sub-Pages) -->
+            <div id="navContractor" style="display:none">
+                <p class="nav-section-title">Vendor Procurement</p>
+                <a class="nav-item-dash active" data-page="contractor_overview" href="dashboard/contractor_overview.html">
+                    <span class="material-symbols-outlined">work</span> Contractor Vault
+                </a>
+                <a class="nav-item-dash" data-page="contractor_tenders" href="dashboard/contractor_tenders.html">
+                    <span class="material-symbols-outlined">request_quote</span> Live Municipal Tenders
+                </a>
+                <a class="nav-item-dash" data-page="contractor_bids" href="dashboard/contractor_bids.html">
+                    <span class="material-symbols-outlined">fact_check</span> Submitted Proposals
+                </a>
+                <a class="nav-item-dash" data-page="contractor_invoices" href="dashboard/contractor_invoices.html">
+                    <span class="material-symbols-outlined">receipt</span> Milestone RA Invoices
+                </a>
+                <a class="nav-item-dash" data-page="contractor_compliance" href="dashboard/contractor_compliance.html">
+                    <span class="material-symbols-outlined">shield</span> Empanelment &amp; Solvency
+                </a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Main Content & Header -->
+    <div class="dash-main">
+        <header class="dash-header">
+            <div class="d-flex align-items-center gap-2 gap-md-3"> 
+                <button class="btn p-2 d-flex align-items-center justify-content-center d-lg-none"
+                    id="sidebarToggle" style="border-radius: 8px; background: #081d33; border: 1px solid rgba(217, 119, 6, 0.35); color: var(--dash-gold);" aria-label="Toggle Navigation Menu"> 
+                    <span class="material-symbols-outlined">menu</span> 
+                </button>
+                <div class="d-flex flex-column">
+                    <h5 class="dash-portal-title">Metropolitan Civic Portal</h5> 
+                    <span class="role-badge-gold mt-1" id="roleBadge">CITIZEN PORTAL</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 gap-md-4">
+                <div class="text-end d-none d-md-block">
+                    <div class="fw-bold text-white small" id="navUserName">Rajesh Kumar</div>
+                    <div class="text-white-50" style="font-size: 0.76rem;" id="navUserEmail">citizen@municipalcorp.in</div>
+                </div>
+                <div class="d-flex align-items-center gap-2 gap-md-3 border-start border-secondary border-opacity-25 ps-2 ps-md-3">
+                    <div class="user-avatar" id="userAvatar">R</div> 
+                    <button class="btn-dash-signout" id="signoutBtn"> 
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">logout</span> 
+                        <span class="d-none d-sm-inline">Sign Out</span>
+                    </button>
+                </div>
+            </div>
+        </header> 
+        
+        <!-- Dashboard Content Iframe --> 
+        <iframe id="dashFrame" src="about:blank" title="Municipal Corporation Portal Content" scrolling="yes"></iframe>
+    </div>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>

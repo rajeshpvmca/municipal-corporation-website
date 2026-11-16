@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor Vault | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Contractor &amp; Vendor Procurement Vault</h1>
+            <p class="dash-page-subtitle">Welcome back, <strong>Sri Ramakrishna Infra Pvt Ltd</strong> (Empanelment #SLM-CL1-4412 &bull; Class I Civil Contractor).</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-certificate me-1"></i> Class I Valid till 2028</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Downloading Certified Contractor Empanelment Dossier (PDF)...');">
+                <i class="fa-solid fa-id-card me-1"></i> Empanelment Pass
+            </button>
+            <a href="contractor_tenders.html" class="btn-gold-sm">
+                <i class="fa-solid fa-gavel me-1"></i> Browse Live Tenders
+            </a>
+        </div>
+    </div>
+
+    <!-- 4 High-Level Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Active Contracts Value</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-helmet-safety"></i></div>
+                </div>
+                <div class="stat-value text-white">₹12.45 Cr</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-diagram-project me-1"></i> 3 Major Worksites Active</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Pending RA Invoices</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                </div>
+                <div class="stat-value text-gold">₹48.20 L</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-building-columns me-1"></i> Treasury Scrutiny Stage</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Bids Under Scrutiny</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+                </div>
+                <div class="stat-value text-info">2 Bids</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-clock me-1"></i> L1 Technical Evaluation</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Solvency Certified</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
+                <div class="stat-value text-success">₹5.00 Cr</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check me-1"></i> State Bank of India Endorsed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Worksites Execution Progress -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Live Worksites &amp; Milestone Completion Progress</h2>
+                <p class="dash-card-subtitle">Municipal engineering works currently executed by Sri Ramakrishna Infra under Salem Corporation oversight.</p>
+            </div>
+            <a href="contractor_invoices.html" class="btn-outline-gold-sm">Submit RA Bill</a>
+        </div>
+        <div class="dash-card-body">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 h-100 d-flex flex-column" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-blue">Zone 1 &bull; Hasthampatti</span>
+                            <span class="text-success fw-bold small">82% Completed</span>
+                        </div>
+                        <h5 class="text-white fw-bold mb-1" style="font-size: 1.05rem;">Chinna Thirupathi UGD Sewerage Main</h5>
+                        <p class="text-white-50 small mb-3">Work Order #SLM-WO-2025-104 &bull; Value: ₹4.80 Crore</p>
+                        <div class="progress mb-2" style="height: 8px; background: rgba(255,255,255,0.08);">
+                            <div class="progress-bar bg-success" style="width: 82%;"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-white-50 small mb-3" style="font-size: 0.72rem;">
+                            <span>Pipelaying Done: 14.2 km</span>
+                            <span>Target: 30-Jan-2027</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2">
+                            <button class="btn-gold-sm w-100" onclick="alert('Viewing Milestone Schedule: RA Bill #4 of ₹32.4L approved by Superintending Engineer.');">
+                                <i class="fa-solid fa-chart-line me-1"></i> Milestones
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 h-100 d-flex flex-column" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-amber">Ward 1 &amp; 2</span>
+                            <span class="text-gold fw-bold small">94% Completed</span>
+                        </div>
+                        <h5 class="text-white fw-bold mb-1" style="font-size: 1.05rem;">Smart LED Feeder Conversion Phase II</h5>
+                        <p class="text-white-50 small mb-3">Work Order #SLM-WO-2026-042 &bull; Value: ₹2.15 Crore</p>
+                        <div class="progress mb-2" style="height: 8px; background: rgba(255,255,255,0.08);">
+                            <div class="progress-bar bg-warning" style="width: 94%;"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-white-50 small mb-3" style="font-size: 0.72rem;">
+                            <span>1,340 Poles Commissioned</span>
+                            <span>Target: 15-Dec-2026</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2">
+                            <button class="btn-gold-sm w-100" onclick="alert('Final Inspection scheduled for Smart Feeder on 18-Nov-2026.');">
+                                <i class="fa-solid fa-check me-1"></i> Final Audit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 h-100 d-flex flex-column" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge-purple">Fairlands Zone</span>
+                            <span class="text-info fw-bold small">60% Completed</span>
+                        </div>
+                        <h5 class="text-white fw-bold mb-1" style="font-size: 1.05rem;">Stormwater Drain RCC Box Culvert</h5>
+                        <p class="text-white-50 small mb-3">Work Order #SLM-WO-2026-089 &bull; Value: ₹5.50 Crore</p>
+                        <div class="progress mb-2" style="height: 8px; background: rgba(255,255,255,0.08);">
+                            <div class="progress-bar bg-info" style="width: 60%;"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-white-50 small mb-3" style="font-size: 0.72rem;">
+                            <span>Raft Slab Cast: 800m</span>
+                            <span>Target: 28-Feb-2027</span>
+                        </div>
+                        <div class="mt-auto d-flex gap-2">
+                            <button class="btn-gold-sm w-100" onclick="alert('Viewing Quality Control Concrete Cube Strength Test Report: M30 Grade Passed at 32.8 N/mm².');">
+                                <i class="fa-solid fa-flask me-1"></i> Lab Test Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Bids Under Evaluation & Quick Tender Alerts -->
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="dash-card h-100">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Submitted Bids Under Technical Evaluation</h2>
+                        <p class="dash-card-subtitle">Encrypted e-procurement bids submitted through Tamil Nadu e-Tenders.</p>
+                    </div>
+                    <a href="contractor_bids.html" class="btn-outline-gold-sm">All Bids</a>
+                </div>
+                <div class="dash-card-body p-0">
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Tender ID &amp; Project</th>
+                                    <th>Bid Value (₹)</th>
+                                    <th>EMD Paid</th>
+                                    <th>Evaluation Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-white">#TND-2026-881</div>
+                                        <div class="text-white-50 small">Salem Outer Ring Road Bitumen Resurfacing (18 km)</div>
+                                    </td>
+                                    <td><div class="text-gold fw-bold">₹8.40 Cr</div></td>
+                                    <td><span class="badge-green">₹8,40,000</span></td>
+                                    <td><span class="badge-amber">Technical Scrutiny</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-white">#TND-2026-894</div>
+                                        <div class="text-white-50 small">Modern Micro-Composting Bio-CNG Plant #3</div>
+                                    </td>
+                                    <td><div class="text-gold fw-bold">₹3.80 Cr</div></td>
+                                    <td><span class="badge-green">₹3,80,000</span></td>
+                                    <td><span class="badge-blue">L1 Position Verified</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="dash-card h-100">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Live High-Value Municipal Tenders</h2>
+                        <p class="dash-card-subtitle">Eligible contracts open for Class I Civil &amp; Electrical contractors</p>
+                    </div>
+                    <a href="contractor_tenders.html" class="btn-outline-gold-sm">View All</a>
+                </div>
+                <div class="dash-card-body p-0">
+                    <div class="dash-table-container">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Tender Ref</th>
+                                    <th>Estimate Value</th>
+                                    <th>Last Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-white">#TND-2026-904</div>
+                                        <div class="text-white-50 small">Hasthampatti Zonal Multi-Level Car Parking</div>
+                                    </td>
+                                    <td><div class="text-white fw-bold">₹16.50 Cr</div></td>
+                                    <td><span class="text-danger small fw-bold">24-Nov-2026</span></td>
+                                    <td>
+                                        <a href="contractor_tenders.html" class="btn-gold-sm">
+                                            <i class="fa-solid fa-file-arrow-down me-1"></i> RFP
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold text-white">#TND-2026-912</div>
+                                        <div class="text-white-50 small">Suramangalam Bus Stand Modernization Phase I</div>
+                                    </td>
+                                    <td><div class="text-white fw-bold">₹9.20 Cr</div></td>
+                                    <td><span class="text-warning small fw-bold">02-Dec-2026</span></td>
+                                    <td>
+                                        <a href="contractor_tenders.html" class="btn-gold-sm">
+                                            <i class="fa-solid fa-file-arrow-down me-1"></i> RFP
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

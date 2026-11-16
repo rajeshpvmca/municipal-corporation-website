@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Metropolitan Civic Municipal Corporation</title>
+    <meta name="description" content="Official single-sign-on gateway for Metropolitan Civic Municipal Corporation citizens, officials, and contractors. Access e-governance, property tax assessments, and grievance tracking.">
+    <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+    
+    <!-- Google Fonts (Outfit & Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body class="auth-page">
+
+    <div class="container-fluid p-0">
+        <div class="row g-0 min-vh-100">
+            <!-- Left: Civic Headquarters Banner (Desktop) -->
+            <div class="col-lg-5 d-none d-lg-block auth-banner" style="background-image: url('assets/images/city_hall_main.webp');">
+                <div class="auth-banner-content">
+                    <a href="index.html" class="auth-banner-logo" aria-label="Metropolitan Civic Municipal Corporation">
+                        <div class="header-logo-styled" aria-label="Stackly Logo"></div>
+                    </a>
+                    
+                    <div class="text-white my-auto py-5">
+                        <span class="text-uppercase text-warning letter-spacing-2 small fw-bold d-block mb-2">Citizen &amp; Official Civic Portal</span>
+                        <h2 class="auth-banner-headline mb-3">Welcome to Metropolitan Civic Corporation</h2>
+                        <p class="auth-banner-desc mb-4">
+                            Access paperless property tax assessments, utility billing, instant vital records verification, 24/7 ward grievance redressal, and automated public tender procurement.
+                        </p>
+                        
+                        <div class="auth-trust-strip">
+                            <span class="auth-trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Encrypted &amp; SSL Secured Civic Gateway</span>
+                            <span class="auth-trust-badge"><i class="fa-solid fa-building-columns"></i> Salem Municipal Corporation &amp; Smart City Mission</span>
+                            <span class="auth-trust-badge"><i class="fa-solid fa-users"></i> Serving 1.48M+ Metropolitan Residents</span>
+                        </div>
+                    </div>
+
+                    <div class="text-white-50 small">
+                        &copy; 2026 Metropolitan Civic Municipal Corporation. MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008, India.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Municipal Corporation Authentication Form Side -->
+            <div class="col-12 col-lg-7 auth-form-side">
+                <div class="auth-form-card mx-auto position-relative">
+                    <!-- Back to Home -->
+                    <a href="index.html" class="auth-back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Return to Corporation Home</span>
+                    </a>
+
+                    <div class="auth-form-header">
+                        <div class="auth-mobile-logo d-lg-none mx-auto mb-3 text-center">
+                            <a href="index.html">
+                                <div class="header-logo-styled" aria-label="Stackly Logo"></div>
+                            </a>
+                        </div>
+                        <h2 class="auth-form-title">Civic Portal Sign In</h2>
+                        <p class="auth-form-subtitle">Enter your credentials to access your verified municipal services dashboard.</p>
+                    </div>
+
+                    <form id="loginForm">
+                        <!-- Municipal Corporation Role Selection: Citizen, Official, Contractor -->
+                        <div class="mb-4">
+                            <label class="role-section-label">Select Your Role</label>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <input type="radio" name="loginRole" id="loginRoleCitizen" value="Citizen" class="role-card-input" checked required>
+                                    <label for="loginRoleCitizen" class="role-card-label w-100">
+                                        <i class="fa-solid fa-user-check"></i>
+                                        <span>Citizen</span>
+                                    </label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="radio" name="loginRole" id="loginRoleOfficial" value="Official" class="role-card-input" required>
+                                    <label for="loginRoleOfficial" class="role-card-label w-100">
+                                        <i class="fa-solid fa-building-columns"></i>
+                                        <span>Official</span>
+                                    </label>
+                                </div>
+                                <div class="col-4">
+                                    <input type="radio" name="loginRole" id="loginRoleContractor" value="Contractor" class="role-card-input" required>
+                                    <label for="loginRoleContractor" class="role-card-label w-100">
+                                        <i class="fa-solid fa-file-contract"></i>
+                                        <span>Contractor</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- Quick Fill Demo Buttons -->
+                            <div class="d-flex justify-content-between align-items-center mb-3 mt-2 flex-wrap gap-1">
+                                <span class="text-white-50 small" style="font-size: 0.75rem;">1-Click Demo Fill:</span>
+                                <div class="d-flex gap-1 flex-wrap">
+                                    <button type="button" class="btn btn-sm btn-outline-warning py-0 px-2" style="font-size: 0.72rem; border-radius: 6px;" onclick="fillDemo('Citizen')">Citizen</button>
+                                    <button type="button" class="btn btn-sm btn-outline-warning py-0 px-2" style="font-size: 0.72rem; border-radius: 6px;" onclick="fillDemo('Official')">Official</button>
+                                    <button type="button" class="btn btn-sm btn-outline-warning py-0 px-2" style="font-size: 0.72rem; border-radius: 6px;" onclick="fillDemo('Contractor')">Contractor</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="mb-3 position-relative">
+                            <label class="auth-field-label" for="loginEmail">Registered Email Address</label>
+                            <div class="position-relative">
+                                <i class="fa-solid fa-envelope input-icon"></i>
+                                <input type="email" class="form-control custom-input" id="loginEmail" placeholder="citizen@municipalcorp.in" required>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label class="auth-field-label mb-0" for="loginPassword">Password</label>
+                                <a href="404.html" class="auth-gold-link small" style="font-size: 0.76rem;">Forgot Password?</a>
+                            </div>
+                            <div class="position-relative">
+                                <i class="fa-solid fa-lock input-icon"></i>
+                                <input type="password" class="form-control custom-input pe-5" id="loginPassword" placeholder="Enter your password" required>
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                            
+                            <!-- Real-time Password Strength Meter -->
+                            <div class="password-strength-meter">
+                                <div class="strength-bar flex-fill"></div>
+                                <div class="strength-bar flex-fill"></div>
+                                <div class="strength-bar flex-fill"></div>
+                                <div class="strength-bar flex-fill"></div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-1">
+                                <small class="text-white-50" style="font-size: 0.68rem;">Min 8 chars, 1 uppercase, 1 symbol, 1 num</small>
+                                <small class="strength-text fw-bold text-white-50"></small>
+                            </div>
+                        </div>
+
+                        <!-- Remember Me Checkbox -->
+                        <div class="mb-4 form-check d-flex align-items-center">
+                            <input type="checkbox" class="form-check-input mt-0 me-2" id="rememberMe" required>
+                            <label class="form-check-label" for="rememberMe">Remember this device for secure civic sessions</label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-auth-gold">
+                            <span>Sign In to Civic Portal</span>
+                            <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </button>
+                    </form>
+
+                    <p class="auth-switch-text">
+                        Don't have a verified Citizen Account? 
+                        <a href="register.html" class="auth-gold-link ms-1">Register Profile Here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/auth.js"></script>
+    
+    <!-- Real-time Password Strength Meter & Demo Fill JS -->
+    <script>
+        function fillDemo(role) {
+            if(role === 'Citizen') {
+                const r = document.getElementById('loginRoleCitizen'); if (r) r.checked = true;
+                const em = document.getElementById('loginEmail'); if (em) em.value = 'citizen@municipalcorp.in';
+                const pw = document.getElementById('loginPassword'); if (pw) pw.value = 'Citizen#2026';
+            } else if(role === 'Official') {
+                const r = document.getElementById('loginRoleOfficial'); if (r) r.checked = true;
+                const em = document.getElementById('loginEmail'); if (em) em.value = 'officer@municipalcorp.in';
+                const pw = document.getElementById('loginPassword'); if (pw) pw.value = 'Official#2026';
+            } else if(role === 'Contractor') {
+                const r = document.getElementById('loginRoleContractor'); if (r) r.checked = true;
+                const em = document.getElementById('loginEmail'); if (em) em.value = 'contractor@municipalcorp.in';
+                const pw = document.getElementById('loginPassword'); if (pw) pw.value = 'Vendor#2026';
+            }
+            const passInput = document.getElementById('loginPassword');
+            if (passInput) passInput.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const passInput = document.getElementById('loginPassword');
+            const bars = document.querySelectorAll('.strength-bar');
+            const text = document.querySelector('.strength-text');
+            
+            if(passInput && bars.length > 0) {
+                passInput.addEventListener('input', function() {
+                    const val = this.value;
+                    let score = 0;
+                    if(val.length >= 8) score++;
+                    if(/[A-Z]/.test(val)) score++;
+                    if(/[0-9]/.test(val)) score++;
+                    if(/[^A-Za-z0-9]/.test(val)) score++;
+                    
+                    bars.forEach(b => b.className = 'strength-bar flex-fill');
+                    
+                    if(score > 0) bars[0].classList.add('active-weak');
+                    if(score > 1) bars[1].classList.add('active-fair');
+                    if(score > 2) bars[2].classList.add('active-good');
+                    if(score > 3) bars[3].classList.add('active-strong');
+                    
+                    const texts = ["", "Weak", "Fair", "Good", "Strong"];
+                    const colors = ["text-white-50", "text-danger", "text-warning", "text-primary", "text-success"];
+                    
+                    text.textContent = val.length === 0 ? texts[0] : texts[score];
+                    text.className = 'strength-text fw-bold ' + (val.length === 0 ? colors[0] : colors[score]);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

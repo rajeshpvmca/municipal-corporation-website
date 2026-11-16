@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empanelment & Solvency | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Vendor Empanelment &amp; Solvency Vault</h1>
+            <p class="dash-page-subtitle">Statutory certifications, ₹5.00 Crore banking solvency verification, GST clearances, EPF/ESI returns, and quality compliance records for <strong>Sri Ramakrishna Infra Pvt Ltd</strong>.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-shield-halved me-1"></i> Class I Validated</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Downloading Certified Contractor Master Dossier (PDF)... Contains all 6 statutory clearances.');">
+                <i class="fa-solid fa-file-pdf me-1"></i> Master Dossier
+            </button>
+            <button class="btn-gold-sm" onclick="document.getElementById('uploadComplianceSection').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-cloud-arrow-up me-1"></i> Upload Renewal
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 High-Level Metrics -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Empanelment Tier</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-medal"></i></div>
+                </div>
+                <div class="stat-value text-white">Class I</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check me-1"></i> Civil &amp; Electrical (Unlimited Value)</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Bank Solvency Certified</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-building-columns"></i></div>
+                </div>
+                <div class="stat-value text-success">₹5.00 Cr</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-bank me-1"></i> State Bank of India Endorsed</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Statutory Score</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="stat-value text-gold">100%</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-shield-check me-1"></i> Zero Non-Compliance Notices</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Worksite Insurance</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-umbrella"></i></div>
+                </div>
+                <div class="stat-value text-info">₹10.00 Cr</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-circle-check me-1"></i> All-Risk Policy (Active)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Statutory Clearances Table -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Empanelment Clearances &amp; Statutory Credentials</h2>
+                <p class="dash-card-subtitle">Official clearance certificates registered in the Salem City Municipal Corporation Vendor Database.</p>
+            </div>
+            <div class="dash-search-box" style="max-width: 280px;">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="compSearch" class="form-control" placeholder="Search credential or doc..." onkeyup="filterCompliance()">
+            </div>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="compTable">
+                    <thead>
+                        <tr>
+                            <th>Certificate Type &amp; Reg #</th>
+                            <th>Issuing Authority / Bank</th>
+                            <th>Scope / Sanction Limit</th>
+                            <th>Valid Through</th>
+                            <th>Verification Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-award me-2 text-gold"></i>Class I Municipal Empanelment</div>
+                                <div class="text-white-50 small">Reg #: SLM-CL1-4412</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Salem City Municipal Corporation</div>
+                                <div class="text-white-50 small">Office of the Superintending Engineer</div>
+                            </td>
+                            <td><span class="text-white fw-bold">Unlimited Contract Value</span></td>
+                            <td><span class="text-white">31-Mar-2028</span></td>
+                            <td><span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> Verified &amp; Active</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Sealed Class I Empanelment Certificate (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-building-columns me-2 text-info"></i>Bank Solvency Certificate</div>
+                                <div class="text-white-50 small">Ref: SBI-SLM-SOL-2026-904</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">State Bank of India</div>
+                                <div class="text-white-50 small">Hasthampatti Branch, Salem</div>
+                            </td>
+                            <td><span class="text-gold fw-bold">₹5,00,00,000.00</span></td>
+                            <td><span class="text-white">31-Mar-2027</span></td>
+                            <td><span class="badge-green"><i class="fa-solid fa-check-double me-1"></i> Bank Confirmed</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Stamped SBI Solvency Certificate (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-receipt me-2 text-warning"></i>GST Return Filing Clearance</div>
+                                <div class="text-white-50 small">GSTIN: 33AAACR4412K1Z9</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Commercial Taxes Department</div>
+                                <div class="text-white-50 small">Government of Tamil Nadu, Salem Circle</div>
+                            </td>
+                            <td><span class="text-white">GSTR-3B &amp; GSTR-9 Filed</span></td>
+                            <td><span class="text-white">FY 2026-27</span></td>
+                            <td><span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> Nil Arrears</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading GST Clearance Certificate & GSTR-3B Acknowledgement (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-scale-balanced me-2 text-primary"></i>Income Tax Assessment Clearance</div>
+                                <div class="text-white-50 small">PAN: AAACR4412K</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Income Tax Department</div>
+                                <div class="text-white-50 small">Circle 1(1), Salem &bull; Central Board of Direct Taxes</div>
+                            </td>
+                            <td><span class="text-white">Form 26AS &amp; ITR-V Verified</span></td>
+                            <td><span class="text-white">AY 2026-27</span></td>
+                            <td><span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> Assessed &amp; Cleared</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Income Tax Assessment Clearance Certificate (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-people-group me-2 text-info"></i>EPF &amp; ESI Workforce Compliance</div>
+                                <div class="text-white-50 small">EPF: TN/SLM/44129 &bull; ESI: 510008812</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Employees Provident Fund Organisation</div>
+                                <div class="text-white-50 small">Regional Office, Salem</div>
+                            </td>
+                            <td><span class="text-white">84 Insured Field Workers</span></td>
+                            <td><span class="text-white">Current (Monthly)</span></td>
+                            <td><span class="badge-green"><i class="fa-solid fa-circle-check me-1"></i> ECR Remitted</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Monthly EPF Electronic Challan Receipt (ECR)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-shield-heart me-2 text-danger"></i>Contractors All-Risk (CAR) Policy</div>
+                                <div class="text-white-50 small">Policy #: NIC-CAR-2026-8812</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">National Insurance Company Ltd</div>
+                                <div class="text-white-50 small">Salem Divisional Office</div>
+                            </td>
+                            <td><span class="text-info fw-bold">₹10,00,00,000.00 Coverage</span></td>
+                            <td><span class="text-white">31-Dec-2027</span></td>
+                            <td><span class="badge-blue"><i class="fa-solid fa-shield-halved me-1"></i> Third-Party Covered</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Contractors All-Risk Insurance Policy Schedule (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Download
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Machinery Fleet & Compliance Upload Row -->
+    <div class="row g-4" id="uploadComplianceSection">
+        <div class="col-lg-7">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title"><i class="fa-solid fa-truck-ramp-box text-gold me-2"></i>Heavy Machinery &amp; Quality Equipment Fleet</h2>
+                        <p class="dash-card-subtitle">Owned mechanical fleet verified during Class I empanelment audit.</p>
+                    </div>
+                </div>
+                <div class="dash-card-body">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <div class="text-white fw-semibold small mb-1"><i class="fa-solid fa-fire text-warning me-2"></i>Hot Mix Asphalt Plant</div>
+                                <div class="text-white-50" style="font-size: 0.74rem;">Capacity: 120 TPH &bull; Computerized Electronic Control Batching &bull; Hasthampatti Yard</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <div class="text-white fw-semibold small mb-1"><i class="fa-solid fa-road text-info me-2"></i>Bitumen Hydrostatic Sensor Paver</div>
+                                <div class="text-white-50" style="font-size: 0.74rem;">Width: 7.5 Meters &bull; Dual Grade &amp; Slope Electronic Sensors &bull; Vögele Super 1800</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <div class="text-white fw-semibold small mb-1"><i class="fa-solid fa-trowel-bricks text-success me-2"></i>Concrete Batching Plant</div>
+                                <div class="text-white-50" style="font-size: 0.74rem;">Capacity: 30 m³/hr &bull; Automated Load Cells &bull; Chinna Thirupathi Works Depot</div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
+                                <div class="text-white fw-semibold small mb-1"><i class="fa-solid fa-truck text-gold me-2"></i>Hydraulic Excavators &amp; Compactors</div>
+                                <div class="text-white-50" style="font-size: 0.74rem;">4 Heavy Track Excavators (Tata Hitachi) + 2 Vibratory Tandem Soil Compactors</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title"><i class="fa-solid fa-cloud-arrow-up text-gold me-2"></i>Upload Renewal Document</h2>
+                        <p class="dash-card-subtitle">Keep municipal credentials up to date</p>
+                    </div>
+                </div>
+                <div class="dash-card-body">
+                    <form onsubmit="handleUploadCompliance(event)">
+                        <div class="mb-3">
+                            <label class="dash-form-label">Document Category <span class="text-danger">*</span></label>
+                            <select class="dash-select w-100" id="docCat" required>
+                                <option value="Bank Solvency">Bank Solvency Renewal Certificate</option>
+                                <option value="GST Clearance">Quarterly GST Clearance Receipt</option>
+                                <option value="EPF ECR">Monthly EPF/ESI Electronic Receipt</option>
+                                <option value="Insurance Policy">Contractors All-Risk Policy Endorsement</option>
+                                <option value="Machinery RC">New Heavy Equipment RC &amp; Fitness</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="dash-form-label">Document Reference Number <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="e.g. SBI/SOL/2027/XXXX" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="dash-form-label">Digital Attachment (.PDF max 10MB) <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" accept=".pdf" required>
+                        </div>
+
+                        <button type="submit" class="btn-gold-sm w-100">
+                            <i class="fa-solid fa-upload me-1"></i> Submit for Municipal Scrutiny
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterCompliance() {
+            var input = document.getElementById('compSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById('compTable');
+            var tr = table.getElementsByTagName('tr');
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                tr[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        function handleUploadCompliance(e) {
+            e.preventDefault();
+            var cat = document.getElementById('docCat').value;
+            alert(cat + ' uploaded successfully!\nScrutiny Token: #SLM-CMP-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nSuperintending Engineer & Audit Wing will verify within 48 hours.');
+        }
+    </script>
+</body>
+</html>

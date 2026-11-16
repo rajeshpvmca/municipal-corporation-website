@@ -1,0 +1,550 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - AUTHENTICATION STYLES
+   File: assets/css/auth.css
+   Theme: Municipal Corporation Website (Citizen & Official Authentication)
+   Colors: Civic Deep Navy (#051322, #0a365c) & Civic Amber/Gold (#d97706, #fbbf24)
+   Full Device Responsive & 320px Micro Viewport Defense
+   =================================================================== */
+
+:root {
+  --auth-bg-deep: #051322;
+  --auth-bg-card: #081d33;
+  --auth-bg-input: #040e1a;
+  --auth-primary: #0a365c;
+  --auth-primary-hover: #072744;
+  --auth-primary-light: #16568e;
+  --auth-secondary: #d97706;
+  --auth-secondary-hover: #b45309;
+  --auth-gold: #fbbf24;
+  --auth-border: rgba(10, 54, 92, 0.45);
+  --auth-border-gold: rgba(217, 119, 6, 0.35);
+  --auth-glow: rgba(10, 54, 92, 0.35);
+  --auth-glow-gold: rgba(217, 119, 6, 0.28);
+  --auth-text-light: #f8fafc;
+  --auth-text-muted: #94a3b8;
+  --auth-font-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --auth-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+body.auth-page {
+  background-color: var(--auth-bg-deep);
+  color: var(--auth-text-light);
+  font-family: var(--auth-font-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* -------------------------------------------------------------------
+   1. DESKTOP LEFT BANNER
+   ------------------------------------------------------------------- */
+.auth-banner {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.auth-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(5, 19, 34, 0.94) 0%, rgba(10, 54, 92, 0.88) 100%);
+  z-index: 1;
+}
+
+.auth-banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem 3rem;
+}
+
+/* Logo styling with theme gradient mask */
+.auth-banner-logo,
+.auth-mobile-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.auth-banner-logo .header-logo-styled,
+.auth-mobile-logo .header-logo-styled {
+  -webkit-mask: url('../images/logoStackly.webp') no-repeat center left;
+  mask: url('../images/logoStackly.webp') no-repeat center left;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  background: linear-gradient(135deg, #ffffff 0%, var(--auth-gold) 100%);
+  width: 160px;
+  height: 44px;
+  display: inline-block;
+}
+
+.auth-banner-headline {
+  font-family: var(--auth-font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.auth-banner-desc {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.auth-trust-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.auth-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.86rem;
+  color: #e2e8f0;
+  background: rgba(10, 54, 92, 0.55);
+  border: 1px solid var(--auth-border-gold);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  width: fit-content;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.auth-trust-badge i {
+  color: var(--auth-gold);
+  font-size: 1rem;
+}
+
+/* -------------------------------------------------------------------
+   2. RIGHT FORM SECTION
+   ------------------------------------------------------------------- */
+.auth-form-side {
+  background: radial-gradient(circle at 80% 20%, rgba(10, 54, 92, 0.35) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.15) 0%, transparent 50%),
+              linear-gradient(180deg, #07192b 0%, #051322 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  min-height: 100vh;
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(8, 29, 51, 0.94);
+  border: 1px solid var(--auth-border-gold);
+  border-top: 3px solid var(--auth-secondary);
+  border-radius: 16px;
+  padding: 2.5rem 2.25rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(10, 54, 92, 0.25);
+}
+
+/* Back Link */
+.auth-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--auth-gold);
+  text-decoration: none;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.auth-back-link:hover {
+  color: #fde68a;
+  transform: translateX(-4px);
+}
+
+/* Form Header */
+.auth-form-header {
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.auth-form-title {
+  font-family: var(--auth-font-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.auth-form-subtitle {
+  font-size: 0.88rem;
+  color: var(--auth-text-muted);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------------------
+   3. ROLE SELECTION CARDS (Citizen, Official, Contractor)
+   ------------------------------------------------------------------- */
+.role-section-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--auth-gold);
+  margin-bottom: 0.6rem;
+}
+
+.role-card-input {
+  display: none;
+}
+
+.role-card-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.85rem 0.5rem;
+  background: var(--auth-bg-input);
+  border: 1px solid var(--auth-border);
+  border-radius: 10px;
+  color: var(--auth-text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.role-card-label i {
+  font-size: 1.3rem;
+  color: #64748b;
+  transition: all 0.25s ease;
+}
+
+.role-card-label:hover {
+  background: rgba(10, 54, 92, 0.4);
+  border-color: var(--auth-secondary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.role-card-label:hover i {
+  color: var(--auth-gold);
+}
+
+.role-card-input:checked + .role-card-label {
+  background: linear-gradient(135deg, rgba(10, 54, 92, 0.95) 0%, rgba(217, 119, 6, 0.35) 100%);
+  border-color: var(--auth-secondary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+}
+
+.role-card-input:checked + .role-card-label i {
+  color: var(--auth-gold);
+  transform: scale(1.1);
+}
+
+/* -------------------------------------------------------------------
+   4. FORM FIELDS & INPUTS
+   ------------------------------------------------------------------- */
+.auth-field-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #cbd5e1;
+  margin-bottom: 0.4rem;
+}
+
+.custom-input {
+  background-color: var(--auth-bg-input) !important;
+  border: 1px solid var(--auth-border) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  padding: 0.7rem 1rem 0.7rem 2.6rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 0.95rem;
+  z-index: 2;
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.custom-input:focus {
+  border-color: var(--auth-secondary) !important;
+  box-shadow: 0 0 0 3px var(--auth-glow-gold) !important;
+  outline: none !important;
+  background-color: #061527 !important;
+}
+
+.custom-input:focus + .input-icon,
+.position-relative:focus-within .input-icon {
+  color: var(--auth-gold);
+}
+
+.custom-input::placeholder {
+  color: #64748b !important;
+  font-size: 0.85rem !important;
+}
+
+/* Password Toggle Button */
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 0.95rem;
+  z-index: 2;
+  transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: var(--auth-gold);
+}
+
+/* Password Strength Meter */
+.password-strength-meter {
+  display: flex;
+  gap: 5px;
+  margin-top: 0.5rem;
+}
+
+.strength-bar {
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.12);
+  transition: background-color 0.3s ease;
+}
+
+.strength-bar.active-weak {
+  background-color: #ef4444 !important;
+}
+
+.strength-bar.active-fair {
+  background-color: #f59e0b !important;
+}
+
+.strength-bar.active-good {
+  background-color: #3b82f6 !important;
+}
+
+.strength-bar.active-strong {
+  background-color: #10b981 !important;
+}
+
+/* Checkbox & Links */
+.form-check-input {
+  background-color: var(--auth-bg-input);
+  border: 1px solid var(--auth-border);
+  border-radius: 4px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--auth-secondary);
+  border-color: var(--auth-secondary);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 2px var(--auth-glow-gold);
+  border-color: var(--auth-secondary);
+}
+
+.form-check-label {
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-gold-link,
+.auth-theme-link {
+  color: var(--auth-gold);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.auth-gold-link:hover,
+.auth-theme-link:hover {
+  color: #fde68a;
+  text-decoration: underline;
+}
+
+/* Submit Button: Civic Navy Gradient with Gold Hover */
+.btn-auth-gold,
+.btn-auth-theme {
+  width: 100%;
+  background: linear-gradient(135deg, var(--auth-primary) 0%, #0e4c80 50%, var(--auth-secondary) 100%);
+  color: #ffffff;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 8px;
+  padding: 0.82rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(10, 54, 92, 0.5);
+  margin-top: 0.5rem;
+}
+
+.btn-auth-gold:hover,
+.btn-auth-theme:hover {
+  background: linear-gradient(135deg, var(--auth-secondary) 0%, var(--auth-gold) 100%);
+  color: #051322;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(217, 119, 6, 0.55);
+}
+
+.btn-auth-gold:active,
+.btn-auth-theme:active {
+  transform: translateY(0);
+}
+
+.auth-switch-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--auth-text-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+/* Invalid Feedback */
+.invalid-feedback {
+  color: #f87171 !important;
+  font-size: 0.78rem !important;
+}
+
+/* -------------------------------------------------------------------
+   5. RESPONSIVE DEFENSE (MOBILE & 320PX)
+   ------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .auth-form-side {
+    padding: 2.5rem 1.25rem;
+    min-height: 100vh;
+  }
+  .auth-form-card {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+  .auth-mobile-logo {
+    display: block !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form-side {
+    padding: 1.5rem 0.85rem;
+  }
+  .auth-form-card {
+    padding: 1.75rem 1.15rem;
+  }
+  .auth-form-title {
+    font-size: 1.55rem;
+  }
+  .role-card-label {
+    padding: 0.65rem 0.3rem;
+    font-size: 0.75rem;
+  }
+  .role-card-label i {
+    font-size: 1.1rem;
+  }
+}
+
+/* 320px Micro Viewport Defense */
+@media (max-width: 340px) {
+  .auth-form-side {
+    padding: 1rem 0.5rem !important;
+  }
+  .auth-form-card {
+    padding: 1.25rem 0.75rem !important;
+    border-radius: 8px !important;
+  }
+  .auth-mobile-logo .header-logo-styled {
+    width: 130px !important;
+    height: 36px !important;
+  }
+  .auth-back-link {
+    font-size: 0.74rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .auth-form-title {
+    font-size: 1.35rem !important;
+  }
+  .auth-form-subtitle {
+    font-size: 0.78rem !important;
+  }
+  .role-section-label,
+  .auth-field-label {
+    font-size: 0.7rem !important;
+  }
+  .role-card-label {
+    padding: 0.55rem 0.2rem !important;
+    font-size: 0.68rem !important;
+    gap: 0.25rem !important;
+  }
+  .role-card-label i {
+    font-size: 0.95rem !important;
+  }
+  .custom-input {
+    font-size: 0.82rem !important;
+    padding: 0.58rem 0.75rem 0.58rem 2.2rem !important;
+  }
+  .input-icon {
+    left: 10px !important;
+    font-size: 0.82rem !important;
+  }
+  .form-check-label {
+    font-size: 0.74rem !important;
+  }
+  .btn-auth-gold,
+  .btn-auth-theme {
+    padding: 0.7rem 1rem !important;
+    font-size: 0.78rem !important;
+  }
+  .auth-switch-text {
+    font-size: 0.76rem !important;
+  }
+}

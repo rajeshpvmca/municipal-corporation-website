@@ -1,0 +1,455 @@
+/* ===================================================================
+   METROPOLITAN CIVIC MUNICIPAL CORPORATION - MODERN 404 ERROR STYLES
+   File: assets/css/404.css
+   Theme: Municipal Corporation Website (Governance & Citizen Services)
+   Primary: Deep Civic Navy (#051322, #0a365c) & Civic Amber/Gold (#d97706, #fbbf24)
+   Full Device Responsive & Strict 320px Micro Viewport Defense
+   =================================================================== */
+
+:root {
+  --e404-bg-deep: #051322;
+  --e404-bg-shell: #071a2e;
+  --e404-bg-card: rgba(8, 29, 51, 0.88);
+  --e404-primary: #0a365c;
+  --e404-primary-light: #16538c;
+  --e404-gold: #fbbf24;
+  --e404-amber: #d97706;
+  --e404-amber-hover: #b45309;
+  --e404-border-gold: rgba(217, 119, 6, 0.35);
+  --e404-border-glow: rgba(251, 191, 36, 0.25);
+  --e404-border-subtle: rgba(255, 255, 255, 0.12);
+  --e404-text-white: #ffffff;
+  --e404-text-light: #e2e8f0;
+  --e404-text-muted: #94a3b8;
+  --e404-radius: 24px;
+}
+
+/* Base Body Setup */
+body.error-page-body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--e404-bg-deep);
+  color: var(--e404-text-light);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Ambient Radial Glow Background */
+.e404-ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(10, 54, 92, 0.55) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(217, 119, 6, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(7, 26, 46, 0.9) 0%, var(--e404-bg-deep) 100%);
+  background-attachment: fixed;
+}
+
+/* Background Animated Canvas */
+#e404-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Main Content Layer - Vertically Centered */
+.e404-content-layer {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* -------------------------------------------------------------------
+   CENTER MASTER CARD
+   ------------------------------------------------------------------- */
+.e404-card-wrapper {
+  width: 100%;
+  max-width: 680px;
+  margin: auto;
+}
+
+.e404-master-panel {
+  background: var(--e404-bg-card);
+  border: 1px solid var(--e404-border-gold);
+  border-radius: var(--e404-radius);
+  padding: 3.25rem 2.5rem 2.5rem 2.5rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  text-align: center;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.6), 0 0 50px rgba(10, 54, 92, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Decorative Civic Accent Bar */
+.e404-master-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0a365c 0%, #fbbf24 50%, #d97706 100%);
+}
+
+/* -------------------------------------------------------------------
+   CENTERED BRAND LOGO
+   ------------------------------------------------------------------- */
+.e404-logo-crest {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.e404-brand-logo-center {
+  width: 165px;
+  height: 46px;
+  -webkit-mask: url('../images/logoStackly.webp') no-repeat center center;
+  -webkit-mask-size: contain;
+  mask: url('../images/logoStackly.webp') no-repeat center center;
+  mask-size: contain;
+  background: linear-gradient(135deg, #ffffff 0%, var(--e404-gold) 100%);
+  transition: transform 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.e404-logo-crest a:hover .e404-brand-logo-center {
+  transform: scale(1.05);
+}
+
+/* -------------------------------------------------------------------
+   ANIMATED 404 DISPLAY & RADAR ILLUMINATION
+   ------------------------------------------------------------------- */
+.e404-visual-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  gap: 0.25rem;
+  user-select: none;
+}
+
+.e404-digit {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(5.5rem, 15vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 8px 24px rgba(217, 119, 6, 0.35));
+}
+
+/* Central Radar Circle */
+.e404-radar-box {
+  width: clamp(80px, 16vw, 120px);
+  height: clamp(80px, 16vw, 120px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+}
+
+.e404-radar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(251, 191, 36, 0.4);
+  animation: radarRotate 14s linear infinite;
+}
+
+.e404-radar-ring-inner {
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  animation: radarRotateReverse 9s linear infinite;
+}
+
+.e404-radar-sweep {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(217, 119, 6, 0.4) 0deg, rgba(251, 191, 36, 0.1) 60deg, transparent 90deg);
+  animation: radarRotate 3.5s linear infinite;
+  mask: radial-gradient(circle, transparent 35%, black 40%);
+  -webkit-mask: radial-gradient(circle, transparent 35%, black 40%);
+}
+
+.e404-radar-center {
+  width: 52%;
+  height: 52%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0a365c 0%, #061d33 100%);
+  border: 1px solid var(--e404-border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--e404-gold);
+  font-size: clamp(1.2rem, 3.5vw, 1.85rem);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.4);
+  z-index: 2;
+}
+
+@keyframes radarRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes radarRotateReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* -------------------------------------------------------------------
+   BADGE & HEADLINES
+   ------------------------------------------------------------------- */
+.e404-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(217, 119, 6, 0.15);
+  border: 1px solid var(--e404-border-gold);
+  border-radius: 30px;
+  color: var(--e404-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.15rem;
+}
+
+.e404-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  font-weight: 700;
+  color: var(--e404-text-white);
+  line-height: 1.2;
+  margin-bottom: 0.85rem;
+}
+
+.e404-desc {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--e404-text-muted);
+  max-width: 540px;
+  margin: 0 auto 2.25rem auto;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------
+   ACTION BUTTONS (GO BACK & BACK TO HOME)
+   ------------------------------------------------------------------- */
+.e404-action-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  margin-bottom: 2.25rem;
+  flex-wrap: wrap;
+}
+
+/* Back to Home Button (Prominent Gold Gradient) */
+.btn-404-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.85rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #051322 !important;
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.4);
+  transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.btn-404-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(217, 119, 6, 0.55);
+  background: linear-gradient(135deg, #fde68a 0%, #fbbf24 100%);
+  color: #051322 !important;
+}
+
+.btn-404-home:active {
+  transform: translateY(0);
+}
+
+/* Go Back Button (Sleek Frosted Glass Style) */
+.btn-404-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--e404-text-white) !important;
+  background: rgba(10, 54, 92, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.28s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.btn-404-back:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--e404-gold);
+  color: var(--e404-gold) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.btn-404-back:active {
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------
+   CITY HALL HELPLINE & ADDRESS STRIP
+   ------------------------------------------------------------------- */
+.e404-support-strip {
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--e404-text-muted);
+}
+
+.e404-support-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.e404-support-item i {
+  color: var(--e404-gold);
+}
+
+.e404-support-item a {
+  color: var(--e404-gold);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.e404-support-item a:hover {
+  text-decoration: underline;
+}
+
+/* -------------------------------------------------------------------
+   BOTTOM FOOTER
+   ------------------------------------------------------------------- */
+.e404-footer {
+  width: 100%;
+  max-width: 680px;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+  font-size: 0.76rem;
+  color: rgba(148, 163, 184, 0.6);
+  padding: 0.5rem;
+}
+
+/* -------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES (DOWN TO 320PX)
+   ------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+  .e404-master-panel {
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+  }
+  .e404-support-strip {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.65rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .e404-master-panel {
+    padding: 2rem 1.25rem 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+  .e404-brand-logo-center {
+    width: 140px;
+    height: 38px;
+  }
+  .e404-action-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .btn-404-home,
+  .btn-404-back {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+  }
+}
+
+/* 320px Micro Viewport Defense */
+@media (max-width: 360px) {
+  .e404-content-layer {
+    padding: 1rem 0.5rem !important;
+  }
+  .e404-master-panel {
+    padding: 1.5rem 0.75rem 1.25rem 0.75rem !important;
+    border-radius: 14px !important;
+  }
+  .e404-brand-logo-center {
+    width: 120px !important;
+    height: 32px !important;
+  }
+  .e404-status-badge {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.65rem !important;
+  }
+  .e404-title {
+    font-size: 1.35rem !important;
+  }
+  .e404-desc {
+    font-size: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .btn-404-home,
+  .btn-404-back {
+    font-size: 0.85rem !important;
+    padding: 0.7rem 0.75rem !important;
+  }
+  .e404-support-strip {
+    font-size: 0.72rem !important;
+    gap: 0.5rem !important;
+  }
+}

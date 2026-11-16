@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Metropolitan Civic Municipal Corporation | Official Public Portal</title>
+  <meta name="description" content="Official website of Metropolitan Civic Municipal Corporation. Access citizen e-services, pay property taxes, track grievances, view council resolutions, and explore smart city initiatives.">
+
+  <!-- Favicon: Official Stackly Logo -->
+  <link rel="icon" type="image/webp" href="assets/images/logoStackly.webp">
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6.5.2 CDN (Latest with X / Twitter Icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ===================================================================
+       GLOBAL PRELOADER
+       =================================================================== -->
+  <div id="global-preloader">
+    <div class="preloader-crest">
+      <i class="fa-solid fa-landmark"></i>
+    </div>
+    <div class="preloader-brand-title">METROPOLITAN CIVIC CORPORATION</div>
+    <div class="preloader-subtitle">Loading Public Services & Urban Intelligence...</div>
+  </div>
+
+  <!-- Common Header Placeholder (Loaded via script.js or Fallback) -->
+  <div id="header-placeholder">
+    <!-- Header component will be dynamically loaded here -->
+  </div>
+
+  <main>
+
+    <!-- ===================================================================
+         SECTION 1: HERO SECTION WITH THREE.JS 3D CANVAS & GSAP
+         =================================================================== -->
+    <section class="hero-section py-5" id="hero">
+      <!-- Three.js 3D Smart City Data Grid Canvas -->
+      <canvas id="threejs-hero-canvas"></canvas>
+
+      <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+          
+          <!-- Hero Text Column -->
+          <div class="col-12 col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+            <div class="hero-kicker-tag">
+              <i class="fa-solid fa-shield-halved text-warning"></i>
+              <span>OFFICIAL MUNICIPAL GOVERNANCE PORTAL</span>
+            </div>
+
+            <h1 class="hero-main-heading">
+              Empowering Citizens, Building a <span class="highlight-gold">Smarter Metropolis</span>
+            </h1>
+
+            <p class="hero-lead-text">
+              Welcome to the digital gateway of Metropolitan Civic Municipal Corporation. Experience transparent civic administration, instant online tax assessments, 24/7 grievance resolution, and sustainable urban infrastructure.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="404.html" class="btn btn-civic-gold">
+                <i class="fa-solid fa-layer-group me-1"></i>Explore 40+ e-Services
+              </a>
+              <a href="404.html" class="btn btn-civic-outline-white">
+                <i class="fa-solid fa-magnifying-glass me-1"></i>Track Grievance Status
+              </a>
+              <a href="404.html" class="btn btn-civic-primary">
+                <i class="fa-solid fa-user-lock me-1"></i>Citizen Login
+              </a>
+            </div>
+
+            <!-- Instant Fast-Track Civic Search Box -->
+            <div class="hero-quick-search-box">
+              <i class="fa-solid fa-magnifying-glass text-warning ms-2"></i>
+              <input type="text" id="civicQuickSearchInput" placeholder="Search services: e.g., 'Property Tax', 'Trade License', 'Birth Certificate'..." aria-label="Search civic services">
+              <a href="404.html" class="btn btn-civic-gold btn-sm px-3">Find Service</a>
+            </div>
+          </div>
+
+          <!-- Hero Visual & Floating Highlights Column -->
+          <div class="col-12 col-lg-5" data-aos="fade-left" data-aos-duration="1000">
+            <div class="hero-visual-card position-relative">
+              <img src="assets/images/city_hall_main.webp" alt="Metropolitan City Hall Civic Headquarters" class="img-fluid" width="600" height="480">
+              
+              <!-- Floating Highlight Badge 1 -->
+              <div class="hero-float-badge badge-top-right">
+                <div class="hero-badge-icon bg-eco">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0 text-dark">ISO 14001 Certified</h6>
+                  <span class="small text-muted">Sustainable Green City</span>
+                </div>
+              </div>
+
+              <!-- Floating Highlight Badge 2 -->
+              <div class="hero-float-badge badge-bottom-left">
+                <div class="hero-badge-icon bg-gold">
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-0 text-dark">99.8% Digital Uptime</h6>
+                  <span class="small text-muted">Direct Citizen Delivery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 2: CRITICAL CIVIC ALERTS & EMERGENCY TICKER
+         =================================================================== -->
+    <section class="py-2 bg-dark text-white border-bottom border-secondary">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-danger text-uppercase px-2 py-1 small">
+              <i class="fa-solid fa-triangle-exclamation me-1"></i>Civic Advisory
+            </span>
+            <span class="small text-light">
+              Annual Council Budget Hearing scheduled for Nov 24, 2026. Ward 3 drinking water pipeline maintenance complete.
+            </span>
+          </div>
+          <div class="d-flex align-items-center gap-3 small">
+            <span class="text-warning"><i class="fa-solid fa-phone me-1"></i>Toll-Free: +91 9876543210</span>
+            <span class="d-none d-md-inline opacity-50">|</span>
+            <span class="text-light d-none d-md-inline"><i class="fa-solid fa-clock me-1"></i>Helpline 24x7</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: KEY CITIZEN FAST-TRACK e-SERVICES (8 TILES)
+         =================================================================== -->
+    <section class="py-5 bg-light" id="services-grid">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-bolt me-1"></i>Direct Citizen Access</span>
+          <h2 class="section-title">Essential Public e-Services</h2>
+          <p class="section-lead mx-auto">Access official municipal services online from the comfort of your home with zero physical queues and end-to-end digital tracking.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Tile 1 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Property Tax Assessment</h5>
+              <p class="small text-muted mb-3">Calculate tax dues, avail 5% early rebate, and download annual digital receipts instantly.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Assess & Pay &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 2 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="150">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-faucet-drip"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Water & Sewerage Services</h5>
+              <p class="small text-muted mb-3">Apply for new utility meters, track drinking water delivery schedules, and report leaks.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Water Portal &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 3 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Birth & Death Registration</h5>
+              <p class="small text-muted mb-3">Search official civic archives and download digitally verified vital certificates with QR codes.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Get Certificates &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 4 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="250">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Trade & Commercial License</h5>
+              <p class="small text-muted mb-3">Single-window registration for retailers, food establishments, and industrial premises.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Apply Online &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 5 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-compass-drafting"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Building Plan Approvals</h5>
+              <p class="small text-muted mb-3">Submit architectural drawings online for rapid auto-scrutiny and NOC clearances.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Submit Plans &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 6 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="350">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-recycle"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Solid Waste & Recycling</h5>
+              <p class="small text-muted mb-3">Check segregated collection timings, bulk waste pickups, and community compost bins.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">View Schedule &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 7 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Citizen Grievance Redressal</h5>
+              <p class="small text-muted mb-3">Lodge civic complaints regarding roads, lights, sanitation, and receive SMS updates.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">File Complaint &rarr;</span>
+            </a>
+          </div>
+
+          <!-- Tile 8 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="450">
+            <a href="404.html" class="service-tile text-decoration-none w-100">
+              <div class="service-tile-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Ward & Councillor Directory</h5>
+              <p class="small text-muted mb-3">Locate your ward office, contact elected representatives, and view council surgery hours.</p>
+              <span class="btn btn-sm btn-outline-primary mt-auto">Find Ward &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4: MAYOR'S OFFICE WELCOME & CIVIC COMMITMENT
+         =================================================================== -->
+    <section class="py-5 bg-white" id="mayor-welcome">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-5" data-aos="fade-right">
+            <div class="position-relative">
+              <div class="leadership-portrait-card">
+                <div class="leadership-img-frame" style="height: 420px;">
+                  <img src="assets/images/mayor_portrait.webp" alt="Right Worshipful Mayor of Metropolitan City" class="img-fluid" width="450" height="420">
+                  <span class="leadership-role-tag">
+                    <i class="fa-solid fa-crown me-1"></i>Office of the Mayor
+                  </span>
+                </div>
+              </div>
+              <div class="p-3 bg-light rounded-3 border mt-3 text-center">
+                <h6 class="fw-bold text-dark mb-0">Cllr. Arthur Pendelton</h6>
+                <span class="small text-muted">The Worshipful Mayor & Council Leader</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-7" data-aos="fade-left">
+            <span class="section-kicker"><i class="fa-solid fa-landmark-flag me-1"></i>Mayor's Message</span>
+            <h2 class="section-title">A City That Cares, Connects, and Inspires</h2>
+            <p class="text-body lead">
+              "Our municipal mandate is anchored in public accountability, social inclusion, and progressive urban infrastructure. Every resident deserves clean water, vibrant green parks, smooth transport, and dignified public spaces."
+            </p>
+            <p class="text-muted">
+              Over the past decade, our Metropolitan Corporation has transitioned into a digital-first civic authority. Through our unified single-window portal, we have cut red tape, eliminated paperwork delays, and ensured that municipal decisions are transparently shared with every neighborhood council.
+            </p>
+            <div class="row g-3 my-3">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                  <i class="fa-solid fa-check-double text-success fs-4"></i>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">Zero-Tolerance</h6>
+                    <span class="small text-muted">On Civic Neglect & Waste</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3">
+                  <i class="fa-solid fa-globe text-primary fs-4"></i>
+                  <div>
+                    <h6 class="fw-bold mb-0 text-dark">Net-Zero 2030</h6>
+                    <span class="small text-muted">Clean Energy & Electric Fleet</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <a href="404.html" class="btn btn-civic-primary">Read Corporation Charter</a>
+              <a href="404.html" class="btn btn-civic-outline">Meet City Council</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 5: LIVE CIVIC METRICS (GSAP COUNTERS)
+         =================================================================== -->
+    <section class="py-5 bg-light border-top border-bottom" id="civic-metrics">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-chart-line me-1"></i>Live Civic Performance</span>
+          <h2 class="section-title">City Governance in Numbers</h2>
+          <p class="section-lead mx-auto">Real-time statistics demonstrating our dedication to efficient public delivery and urban stewardship.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="zoom-in" data-aos-delay="100">
+            <div class="counter-card w-100">
+              <div class="counter-icon-box">
+                <i class="fa-solid fa-users text-primary"></i>
+              </div>
+              <div class="stat-number stat-number-compact" data-count="1480000" data-prefix="" data-suffix="+">0</div>
+              <div class="stat-label">Metropolitan Residents Served</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="zoom-in" data-aos-delay="200">
+            <div class="counter-card w-100">
+              <div class="counter-icon-box">
+                <i class="fa-solid fa-building-columns text-warning"></i>
+              </div>
+              <div class="stat-number" data-count="48" data-prefix="" data-suffix=" Wards">0</div>
+              <div class="stat-label">Administrative Divisions</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="zoom-in" data-aos-delay="300">
+            <div class="counter-card w-100">
+              <div class="counter-icon-box">
+                <i class="fa-solid fa-circle-check text-success"></i>
+              </div>
+              <div class="stat-number" data-count="98.4" data-prefix="" data-suffix="%">0</div>
+              <div class="stat-label">Grievance Redressal Rate</div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="zoom-in" data-aos-delay="400">
+            <div class="counter-card w-100">
+              <div class="counter-icon-box">
+                <i class="fa-solid fa-droplet text-info"></i>
+              </div>
+              <div class="stat-number" data-count="240" data-prefix="" data-suffix=" MLD">0</div>
+              <div class="stat-label">Daily Potable Water Treated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 6: SMART CITY INTEGRATED COMMAND & CONTROL CENTER
+         =================================================================== -->
+    <section class="py-5 bg-white" id="smart-city">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6 order-lg-2" data-aos="fade-left">
+            <div class="position-relative rounded-4 overflow-hidden shadow-lg border">
+              <img src="assets/images/smart_city_control.webp" alt="Integrated Command and Control Center" class="img-fluid" width="600" height="400">
+              <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white">
+                <span class="badge bg-success me-2"><i class="fa-solid fa-circle-dot me-1"></i>LIVE OPERATIONAL</span>
+                <span class="small">Metropolitan Integrated Command & Control Center (ICCC)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6 order-lg-1" data-aos="fade-right">
+            <span class="section-kicker"><i class="fa-solid fa-microchip me-1"></i>Urban Intelligence</span>
+            <h2 class="section-title">24x7 Real-Time City Monitoring</h2>
+            <p class="text-body">
+              Our state-of-the-art Integrated Command & Control Center acts as the digital nerve center of the metropolis, ingesting telemetry from across 48 administrative wards.
+            </p>
+            <div class="d-flex flex-column gap-3 mb-4">
+              <div class="d-flex align-items-start gap-3">
+                <div class="p-2 bg-primary bg-opacity-10 text-primary rounded-circle mt-1">
+                  <i class="fa-solid fa-traffic-light"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-dark">Adaptive Traffic Management</h6>
+                  <p class="small text-muted mb-0">AI-optimized signal corridors reducing peak congestion by 32% and prioritizing emergency ambulances.</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-start gap-3">
+                <div class="p-2 bg-success bg-opacity-10 text-success rounded-circle mt-1">
+                  <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-dark">Environmental & Flood Sensors</h6>
+                  <p class="small text-muted mb-0">Continuous air particulate monitoring and ultrasonic river drainage level alerts for storm resilience.</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-start gap-3">
+                <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-circle mt-1">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1 text-dark">Centralized Smart LED Lighting</h6>
+                  <p class="small text-muted mb-0">Automated dimming and fault detection across 85,000 street lamps saving ₹14 Crore annually.</p>
+                </div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-civic-gold">Explore Smart Initiatives</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 7: INTERACTIVE CITIZEN GRIEVANCE TRACKER (LIVE WIDGET)
+         =================================================================== -->
+    <section class="py-5 bg-light" id="quick-grievance">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8" data-aos="fade-up">
+            <div class="grievance-widget-card">
+              <div class="text-center mb-4">
+                <span class="section-kicker"><i class="fa-solid fa-ticket me-1"></i>Track & Trace</span>
+                <h3 class="fw-bold text-dark">Citizen Grievance Redressal Tracker</h3>
+                <p class="text-muted small">Enter your registered complaint ticket ID to check real-time resolution progress and assigned ward engineer details.</p>
+              </div>
+
+              <form id="grievanceTrackerForm" class="d-flex flex-column flex-sm-row gap-2 mb-3">
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0">
+                    <i class="fa-solid fa-hashtag text-muted"></i>
+                  </span>
+                  <input type="text" id="grievanceTicketId" class="form-control border-start-0" placeholder="Try sample: MCC-2026-8842 or MCC-2026-9014" required>
+                </div>
+                <button type="submit" class="btn btn-civic-primary text-nowrap">
+                  <i class="fa-solid fa-magnifying-glass me-1"></i>Check Status
+                </button>
+              </form>
+
+              <div class="text-center small text-muted">
+                Don't have a ticket yet? <a href="404.html" class="fw-bold text-primary">Lodge a new complaint online</a> or call <a href="tel:+919876543210" class="fw-bold text-dark">+91 9876543210</a>.
+              </div>
+
+              <!-- Dynamic Output Container -->
+              <div id="grievanceResultBox" class="d-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 8: PUBLIC WORKS & LANDMARK INFRASTRUCTURE
+         =================================================================== -->
+    <section class="py-5 bg-white" id="public-works">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5" data-aos="fade-up">
+          <div>
+            <span class="section-kicker"><i class="fa-solid fa-trowel-bricks me-1"></i>Urban Engineering</span>
+            <h2 class="section-title mb-0">Major Infrastructure Investments</h2>
+          </div>
+          <a href="404.html" class="btn btn-outline-primary mt-3 mt-md-0">View All 18 Public Projects &rarr;</a>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card w-100 p-0 overflow-hidden">
+              <div style="height: 180px; overflow: hidden;">
+                <img src="assets/images/public_works_bridge.webp" alt="Victoria Suspension Bridge Overhaul" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-success bg-opacity-10 text-success align-self-start mb-2">92% Completed</span>
+                <h5 class="fw-bold text-dark mb-2">Victoria Suspension Bridge Retrofit</h5>
+                <p class="small text-muted mb-3">Structural strengthening and pedestrian cycleways spanning 1.4 kilometers across the metropolitan river.</p>
+                <div class="mt-auto small text-muted">Est. Budget: <strong>₹14.2 Crore</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card w-100 p-0 overflow-hidden">
+              <div style="height: 180px; overflow: hidden;">
+                <img src="assets/images/road_maintenance.webp" alt="Arterial Ring Road Resurfacing" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-warning bg-opacity-10 text-warning align-self-start mb-2">Active Work</span>
+                <h5 class="fw-bold text-dark mb-2">Arterial Ring Road Paving</h5>
+                <p class="small text-muted mb-3">Heavy duty polymer-modified bitumen resurfacing across 28km of critical transport arteries.</p>
+                <div class="mt-auto small text-muted">Est. Budget: <strong>₹8.6 Crore</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card w-100 p-0 overflow-hidden">
+              <div style="height: 180px; overflow: hidden;">
+                <img src="assets/images/water_treatment_plant.webp" alt="Ultrafiltration Water Treatment Facility" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-info bg-opacity-10 text-info align-self-start mb-2">Commissioned</span>
+                <h5 class="fw-bold text-dark mb-2">North Basin Ultrafiltration Plant</h5>
+                <p class="small text-muted mb-3">Supplying 120 million liters of purer drinking water with automated UV pathogen elimination.</p>
+                <div class="mt-auto small text-muted">Est. Budget: <strong>₹22.0 Crore</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-12 col-md-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="civic-card w-100 p-0 overflow-hidden">
+              <div style="height: 180px; overflow: hidden;">
+                <img src="assets/images/metro_transit_station.webp" alt="Central Integrated Transit Terminal" class="w-100 h-100 object-fit-cover">
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <span class="badge bg-primary bg-opacity-10 text-primary align-self-start mb-2">Phase 2 Ongoing</span>
+                <h5 class="fw-bold text-dark mb-2">Central Transit Interchange</h5>
+                <p class="small text-muted mb-3">Interlinking metropolitan metro rail, electric feeder buses, and public EV charging hubs.</p>
+                <div class="mt-auto small text-muted">Est. Budget: <strong>₹31.5 Crore</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 9: SUSTAINABLE NET-ZERO & ECO-GREEN CITY INITIATIVES
+         =================================================================== -->
+    <section class="py-5 bg-light" id="green-initiatives">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-tree me-1"></i>Environmental Action</span>
+          <h2 class="section-title">Green Metropolis 2030 Framework</h2>
+          <p class="section-lead mx-auto">Creating resilient urban ecosystems, protecting public parks, expanding solar capacity, and accelerating waste diversion.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <div class="col-12 col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card w-100">
+              <div class="rounded-3 overflow-hidden mb-3" style="height: 190px;">
+                <img src="assets/images/green_parks_gardens.webp" alt="Urban Botanical Gardens" class="w-100 h-100 object-fit-cover">
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Urban Parks &amp; Biodiversity Corridors</h5>
+              <p class="small text-muted mb-3">Developing 42 neighborhood mini-forests using the Miyawaki technique to boost urban canopy cover by 25%.</p>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Target: 100,000 Trees</span>
+                  <span class="fw-bold text-success">74% Met</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-success" style="width: 74%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card w-100">
+              <div class="rounded-3 overflow-hidden mb-3" style="height: 190px;">
+                <img src="assets/images/clean_energy_solar.webp" alt="Municipal Solar Roof Installations" class="w-100 h-100 object-fit-cover">
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Solar Power on Public Buildings</h5>
+              <p class="small text-muted mb-3">Installing 15 Megawatts of rooftop photovoltaic panels on City Hall, public hospitals, schools, and civic depots.</p>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Carbon Offset: 18,200 Tons</span>
+                  <span class="fw-bold text-warning">86% Met</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-warning" style="width: 86%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card w-100">
+              <div class="rounded-3 overflow-hidden mb-3" style="height: 190px;">
+                <img src="assets/images/waste_management_eco.webp" alt="Electric Sanitation and Waste Fleet" class="w-100 h-100 object-fit-cover">
+              </div>
+              <h5 class="fw-bold text-dark mb-2">100% Segregated Waste Recovery</h5>
+              <p class="small text-muted mb-3">Zero-landfill strategy converting wet organic waste into bio-methane gas and recycling 94% dry plastics.</p>
+              <div class="mt-auto">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Diversion: 650 TPD</span>
+                  <span class="fw-bold text-info">91% Met</span>
+                </div>
+                <div class="progress" style="height: 6px;">
+                  <div class="progress-bar bg-info" style="width: 91%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 10: INTERACTIVE PROPERTY TAX ESTIMATOR
+         =================================================================== -->
+    <section class="py-5 bg-white" id="tax-estimator">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6" data-aos="fade-right">
+            <span class="section-kicker"><i class="fa-solid fa-calculator me-1"></i>Digital Assessment</span>
+            <h2 class="section-title">Property Tax Quick Estimator</h2>
+            <p class="text-body mb-4">
+              Get an instant preview of your annual municipal council tax assessment based on your property category, built-up square footage, and ward valuation zone.
+            </p>
+            <div class="p-3 bg-light rounded-3 border-start border-4 border-warning mb-4">
+              <h6 class="fw-bold text-dark mb-1">Early Bird Rebate Advantage</h6>
+              <p class="small text-muted mb-0">Citizens paying annual dues through our digital portal before 31 December 2026 receive an automatic 5% rebate credited instantly.</p>
+            </div>
+            <div class="d-flex gap-3">
+              <a href="404.html" class="btn btn-outline-secondary">Assessment Rules</a>
+              <a href="login.html" class="btn btn-civic-gold">Log in to Pay</a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6" data-aos="fade-left">
+            <div class="p-4 p-md-5 rounded-4 bg-light border shadow-sm">
+              <h4 class="fw-bold text-dark mb-3">Calculate Estimated Annual Tax</h4>
+              <form id="taxEstimatorForm">
+                <div class="mb-3">
+                  <label for="taxPropType" class="form-label small fw-bold text-dark">Property Classification</label>
+                  <select id="taxPropType" class="form-select" required>
+                    <option value="residential" selected>Residential Apartment / House</option>
+                    <option value="commercial">Commercial Shop / Office</option>
+                    <option value="industrial">Industrial Warehouse / Plant</option>
+                  </select>
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-sm-6">
+                    <label for="taxAreaSqFt" class="form-label small fw-bold text-dark">Built-Up Area (Sq. Ft.)</label>
+                    <input type="number" id="taxAreaSqFt" class="form-control" value="1250" min="200" max="50000" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="taxWardZone" class="form-label small fw-bold text-dark">Valuation Ward Zone</label>
+                    <select id="taxWardZone" class="form-select" required>
+                      <option value="zone-a">Zone A (City Centre / Commercial)</option>
+                      <option value="zone-b" selected>Zone B (Standard Urban Wards)</option>
+                      <option value="zone-c">Zone C (Suburban / Peripheral)</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-civic-primary w-100 py-2">
+                  <i class="fa-solid fa-coins me-1"></i>Calculate Tax Estimate
+                </button>
+              </form>
+
+              <!-- Dynamic Output Container -->
+              <div id="taxEstimatorResult" class="d-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 11: CITY COUNCIL & WARD GOVERNANCE DIRECTORY
+         =================================================================== -->
+    <section class="py-5 bg-light" id="council-directory">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-users me-1"></i>Elected Leadership</span>
+          <h2 class="section-title">Ward Councillors & Public Officers</h2>
+          <p class="section-lead mx-auto">Our democratically elected councillors represent your neighborhood interests, holding weekly surgeries and community forums.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Councillor 1 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="councillor-card w-100">
+              <div class="councillor-img-frame">
+                <img src="assets/images/councillor_ward1.webp" alt="Councillor Eleanor Davies" class="councillor-img">
+                <span class="councillor-ward-tag"><i class="fa-solid fa-location-dot me-1"></i>Ward 1 &bull; Chinna Thirupathi</span>
+              </div>
+              <div class="councillor-card-body">
+                <h5 class="councillor-name">Cllr. Eleanor Davies</h5>
+                <span class="councillor-role"><i class="fa-solid fa-briefcase text-warning me-1"></i>Chair, Finance &amp; Revenue</span>
+                <div class="councillor-surgery-pill">
+                  <i class="fa-regular fa-calendar-check text-primary me-1"></i>Surgeries: 1st &amp; 3rd Thu 14:00
+                </div>
+                <a href="mailto:support@municipalcorp.in" class="btn btn-sm btn-outline-primary councillor-contact-btn">
+                  <i class="fa-solid fa-envelope me-1"></i>Contact Ward 1
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Councillor 2 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="150">
+            <div class="councillor-card w-100">
+              <div class="councillor-img-frame">
+                <img src="assets/images/councillor_ward2.webp" alt="Councillor Marcus Thorne" class="councillor-img">
+                <span class="councillor-ward-tag"><i class="fa-solid fa-location-dot me-1"></i>Ward 2 &bull; Hasthampatti</span>
+              </div>
+              <div class="councillor-card-body">
+                <h5 class="councillor-name">Cllr. Marcus Thorne</h5>
+                <span class="councillor-role"><i class="fa-solid fa-briefcase text-warning me-1"></i>Chair, Public Works</span>
+                <div class="councillor-surgery-pill">
+                  <i class="fa-regular fa-calendar-check text-primary me-1"></i>Surgeries: Every Tuesday 10:00
+                </div>
+                <a href="mailto:support@municipalcorp.in" class="btn btn-sm btn-outline-primary councillor-contact-btn">
+                  <i class="fa-solid fa-envelope me-1"></i>Contact Ward 2
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Councillor 3 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="councillor-card w-100">
+              <div class="councillor-img-frame">
+                <img src="assets/images/councillor_ward3.webp" alt="Councillor Sophia Sterling" class="councillor-img">
+                <span class="councillor-ward-tag"><i class="fa-solid fa-location-dot me-1"></i>Ward 3 &bull; Suramangalam</span>
+              </div>
+              <div class="councillor-card-body">
+                <h5 class="councillor-name">Cllr. Sophia Sterling</h5>
+                <span class="councillor-role"><i class="fa-solid fa-briefcase text-warning me-1"></i>Chair, Health &amp; Environment</span>
+                <div class="councillor-surgery-pill">
+                  <i class="fa-regular fa-calendar-check text-primary me-1"></i>Surgeries: 2nd &amp; 4th Wed 15:30
+                </div>
+                <a href="mailto:support@municipalcorp.in" class="btn btn-sm btn-outline-primary councillor-contact-btn">
+                  <i class="fa-solid fa-envelope me-1"></i>Contact Ward 3
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Councillor 4 -->
+          <div class="col-12 col-sm-6 col-lg-3 d-flex" data-aos="fade-up" data-aos-delay="250">
+            <div class="councillor-card w-100">
+              <div class="councillor-img-frame">
+                <img src="assets/images/councillor_ward4.webp" alt="Councillor Julian Ross" class="councillor-img">
+                <span class="councillor-ward-tag"><i class="fa-solid fa-location-dot me-1"></i>Ward 4 &bull; Ammapet</span>
+              </div>
+              <div class="councillor-card-body">
+                <h5 class="councillor-name">Cllr. Julian Ross</h5>
+                <span class="councillor-role"><i class="fa-solid fa-briefcase text-warning me-1"></i>Chair, Urban Planning</span>
+                <div class="councillor-surgery-pill">
+                  <i class="fa-regular fa-calendar-check text-primary me-1"></i>Surgeries: Every Friday 16:00
+                </div>
+                <a href="mailto:support@municipalcorp.in" class="btn btn-sm btn-outline-primary councillor-contact-btn">
+                  <i class="fa-solid fa-envelope me-1"></i>Contact Ward 4
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="404.html" class="btn btn-outline-primary">
+            <i class="fa-solid fa-address-book me-1"></i>View All 48 Ward Councillors & Boundaries
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 12: LIVE E-TENDERS & PUBLIC NOTICES
+         =================================================================== -->
+    <section class="py-5 bg-white" id="live-tenders">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4" data-aos="fade-up">
+          <div>
+            <span class="section-kicker"><i class="fa-solid fa-gavel me-1"></i>E-Procurement</span>
+            <h2 class="section-title mb-0">Active Municipal Tenders</h2>
+          </div>
+          <a href="404.html" class="btn btn-civic-gold mt-3 mt-md-0">E-Procurement Portal &rarr;</a>
+        </div>
+
+        <div class="civic-table-wrapper table-responsive" data-aos="fade-up">
+          <table class="civic-table table">
+            <thead>
+              <tr>
+                <th>Tender Reference</th>
+                <th>Project Scope & Title</th>
+                <th>Department</th>
+                <th>Est. Value</th>
+                <th>Closing Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="text-primary">MCC/ENG/2026/041</strong></td>
+                <td>Stormwater Drain Desilting & Culvert Reconstruction (Ward 12-16)</td>
+                <td>Public Works</td>
+                <td>₹45,00,000</td>
+                <td><span class="text-danger fw-bold">28 Nov 2026</span></td>
+                <td><a href="404.html" class="btn btn-sm btn-outline-primary">View RFP</a></td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/ENV/2026/088</strong></td>
+                <td>Supply & Maintenance of 20 Electric Solid Waste Compactors</td>
+                <td>Environmental Health</td>
+                <td>₹1,25,00,000</td>
+                <td><span class="text-danger fw-bold">04 Dec 2026</span></td>
+                <td><a href="404.html" class="btn btn-sm btn-outline-primary">View RFP</a></td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/IT/2026/102</strong></td>
+                <td>Cloud Infrastructure Migration & AI Citizen Chatbot Upgrade</td>
+                <td>Information Tech</td>
+                <td>₹32,00,000</td>
+                <td><span class="text-dark fw-bold">12 Dec 2026</span></td>
+                <td><a href="404.html" class="btn btn-sm btn-outline-primary">View RFP</a></td>
+              </tr>
+              <tr>
+                <td><strong class="text-primary">MCC/PRK/2026/015</strong></td>
+                <td>Horticulture Landscaping & Drip Irrigation at Civic Central Park</td>
+                <td>Parks & Gardens</td>
+                <td>₹18,00,000</td>
+                <td><span class="text-dark fw-bold">19 Dec 2026</span></td>
+                <td><a href="404.html" class="btn btn-sm btn-outline-primary">View RFP</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 13: METROPOLITAN EVENTS & PUBLIC CONSULTATIONS
+         =================================================================== -->
+    <section class="py-5 bg-light" id="events-section">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-calendar-days me-1"></i>Public Calendar</span>
+          <h2 class="section-title">Upcoming Town Halls & Civic Events</h2>
+          <p class="section-lead mx-auto">Participate directly in our democratic public hearings, cultural celebrations, and community welfare initiatives.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Event 1 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card w-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="p-3 bg-primary text-white rounded-3 text-center" style="min-width: 65px;">
+                  <span class="d-block fw-bold fs-4">24</span>
+                  <span class="small text-uppercase">Nov</span>
+                </div>
+                <div>
+                  <span class="badge bg-primary bg-opacity-10 text-primary small">Council Chamber</span>
+                  <h6 class="fw-bold text-dark mb-0">Annual Budget Town Hall</h6>
+                </div>
+              </div>
+              <p class="small text-muted mb-3">Open public session at City Hall discussing infrastructure budget allocations for the 2027 fiscal year.</p>
+              <div class="mt-auto small text-muted">
+                <i class="fa-solid fa-clock text-warning me-1"></i>18:00 - 20:30 GMT &bull; Hybrid Streamed
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card w-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="p-3 bg-success text-white rounded-3 text-center" style="min-width: 65px;">
+                  <span class="d-block fw-bold fs-4">02</span>
+                  <span class="small text-uppercase">Dec</span>
+                </div>
+                <div>
+                  <span class="badge bg-success bg-opacity-10 text-success small">Community Park</span>
+                  <h6 class="fw-bold text-dark mb-0">Mega Tree Plantation Drive</h6>
+                </div>
+              </div>
+              <p class="small text-muted mb-3">Join volunteers and council horticulturists in planting 5,000 native saplings along the river embankment.</p>
+              <div class="mt-auto small text-muted">
+                <i class="fa-solid fa-clock text-warning me-1"></i>09:00 - 13:00 GMT &bull; Free Saplings
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card w-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="p-3 bg-warning text-dark rounded-3 text-center" style="min-width: 65px;">
+                  <span class="d-block fw-bold fs-4">15</span>
+                  <span class="small text-uppercase">Dec</span>
+                </div>
+                <div>
+                  <span class="badge bg-warning bg-opacity-25 text-dark small">Health Clinic</span>
+                  <h6 class="fw-bold text-dark mb-0">Free Senior Citizen Health Camp</h6>
+                </div>
+              </div>
+              <p class="small text-muted mb-3">Comprehensive health checkups, vision tests, and flu vaccines provided by Municipal Health Services.</p>
+              <div class="mt-auto small text-muted">
+                <i class="fa-solid fa-clock text-warning me-1"></i>10:00 - 16:00 GMT &bull; All Wards
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 14: CITIZEN TESTIMONIALS & COMMUNITY VOICES
+         =================================================================== -->
+    <section class="py-5 bg-white" id="testimonials">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <span class="section-kicker"><i class="fa-solid fa-heart me-1"></i>Citizen Voices</span>
+          <h2 class="section-title">What Our Residents Say</h2>
+          <p class="section-lead mx-auto">Feedback from local homeowners, business operators, and community leaders using our digital civic infrastructure.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Review 1 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="civic-card w-100">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="small text-body fst-italic mb-3">
+                "Paying property tax used to require an entire morning off work. With the new online assessment tool, I verified my square footage, claimed the 5% rebate, and had the receipt downloaded in under three minutes!"
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-2">
+                <div class="testimonial-avatar-frame flex-shrink-0">
+                  <img src="assets/images/citizen_feedback_1.webp" alt="David Sterling" class="testimonial-avatar" width="52" height="52" style="object-position: center center !important;">
+                </div>
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">David Sterling</h6>
+                  <span class="small text-muted">Resident, Ward 4 Highgate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="civic-card w-100">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <p class="small text-body fst-italic mb-3">
+                "I reported a faulty streetlight outside our preschool via the grievance portal at 9pm. By 11am the next morning, the ward engineering van arrived and replaced the unit with a smart LED fixture. Truly impressed!"
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-2">
+                <div class="testimonial-avatar-frame flex-shrink-0">
+                  <img src="assets/images/citizen_feedback_2.webp" alt="Sarah Jenkins" class="testimonial-avatar" width="52" height="52" style="object-position: center 20% !important;">
+                </div>
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Sarah Jenkins</h6>
+                  <span class="small text-muted">Business Owner, Riverside</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="col-12 col-md-4 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="civic-card w-100">
+              <div class="text-warning mb-3">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <p class="small text-body fst-italic mb-3">
+                "Our commercial trade license renewal took less than 48 hours without visiting City Hall. The digital certificate with QR code verification makes regulatory compliance totally effortless."
+              </p>
+              <div class="d-flex align-items-center gap-3 mt-auto pt-2">
+                <div class="testimonial-avatar-frame flex-shrink-0">
+                  <img src="assets/images/citizen_feedback_3.webp" alt="Vikram Malhotra" class="testimonial-avatar" width="52" height="52" style="object-position: center center !important;">
+                </div>
+                <div>
+                  <h6 class="fw-bold text-dark mb-0">Vikram Malhotra</h6>
+                  <span class="small text-muted">Retailer, Central Market</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 15: MUNICIPAL MOBILE APP PROMOTION & DIGITAL CONNECT
+         =================================================================== -->
+    <section class="py-5 bg-dark text-white position-relative overflow-hidden" id="mobile-app">
+      <div class="container position-relative z-2">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-7" data-aos="fade-right">
+            <span class="badge bg-warning text-dark text-uppercase px-3 py-1 fw-bold mb-3">
+              <i class="fa-solid fa-mobile-screen-button me-1"></i>Official Civic Mobile App
+            </span>
+            <h2 class="display-6 fw-bold text-white mb-3">
+              Civic Services at Your Fingertips with "Metropolitan Connect"
+            </h2>
+            <p class="text-light opacity-75 lead mb-4">
+              Download the official mobile app for iOS and Android. Receive real-time push alerts for waste collection, road detours, water maintenance, and pay civic bills with 1-click contactless payment.
+            </p>
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-bell text-warning"></i>
+                  <span>Ward Emergency Push Alerts</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-camera text-warning"></i>
+                  <span>Photo Geotag Grievance Filing</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-bus text-warning"></i>
+                  <span>Live Municipal Bus Tracker</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-wallet text-warning"></i>
+                  <span>Integrated Digital Tax Wallet</span>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="404.html" class="btn btn-outline-light px-4 py-2" >
+                <i class="fa-brands fa-google-play me-2"></i>Google Play
+              </a>
+              <a href="404.html" class="btn btn-outline-light px-4 py-2">
+                <i class="fa-brands fa-apple me-2"></i>Apple App Store
+              </a>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5 text-center" data-aos="fade-left">
+            <div class="p-4 bg-white bg-opacity-10 rounded-4 border border-secondary text-center">
+              <div class="p-3 bg-white rounded-3 d-inline-block mb-3 shadow">
+                <i class="fa-solid fa-qrcode fs-1 text-dark" style="font-size: 6rem !important;"></i>
+              </div>
+              <h5 class="fw-bold text-white mb-1">Scan to Download App</h5>
+              <p class="small text-light opacity-75 mb-0">Compatible with iOS 15+ and Android 10+. Free for all residents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Common Footer Placeholder (Loaded via script.js or Fallback) -->
+  <div id="footer-placeholder">
+    <!-- Footer component will be dynamically loaded here -->
+  </div>
+
+  <!-- Bootstrap 5.3.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Three.js r128 CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Master Script -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>

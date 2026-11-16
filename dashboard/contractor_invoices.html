@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milestone RA Invoices | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">Milestone RA Invoices &amp; Running Accounts</h1>
+            <p class="dash-page-subtitle">Submit digital Measurement Book (e-MB) verified claims, inspect statutory deductions, and track treasury disbursements for Salem Municipal contracts.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-file-invoice-dollar me-1"></i> GSTIN: 33AAACR4412K1Z9</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Downloading FY 2026-27 Consolidated TDS & Retention Statement (PDF)...');">
+                <i class="fa-solid fa-file-pdf me-1"></i> Form 16A TDS
+            </button>
+            <button class="btn-gold-sm" onclick="document.getElementById('submitRABillSection').scrollIntoView({behavior:'smooth'});">
+                <i class="fa-solid fa-plus me-1"></i> Submit New RA Bill
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 High-Level Metrics -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Total Billed FY 26-27</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-receipt"></i></div>
+                </div>
+                <div class="stat-value text-white">₹6.80 Cr</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-chart-simple me-1"></i> 5 Running Bills Processed</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Disbursed to Bank</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-money-check-dollar"></i></div>
+                </div>
+                <div class="stat-value text-success">₹6.32 Cr</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-building-columns me-1"></i> Credited to SBI A/c</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Pending Treasury Audit</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-hourglass-half"></i></div>
+                </div>
+                <div class="stat-value text-gold">₹48.20 L</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-clock me-1"></i> RA Bill #5 (EE Scrutiny)</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Withheld Retention</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
+                </div>
+                <div class="stat-value text-info">₹34.00 L</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-shield-halved me-1"></i> 5% Held for DLP Period</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Invoices Ledger Table -->
+    <div class="dash-card mb-4">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Running Account (RA) Billing History &amp; Payment Vouchers</h2>
+                <p class="dash-card-subtitle">Verified against joint measurement sheets recorded by the Assistant Executive Engineer (AEE).</p>
+            </div>
+            <div class="dash-search-box" style="max-width: 280px;">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" id="invSearch" class="form-control" placeholder="Search bill #, work order, ref..." onkeyup="filterInvoices()">
+            </div>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table" id="invTable">
+                    <thead>
+                        <tr>
+                            <th>Bill # &amp; Work Order</th>
+                            <th>Worksite &amp; Department</th>
+                            <th>Gross Claim (₹)</th>
+                            <th>Statutory Deductions</th>
+                            <th>Net Disbursed</th>
+                            <th>Settlement Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-file-invoice text-gold me-2"></i>RA Bill #5 (UGD)</div>
+                                <div class="text-white-50 small">WO: #SLM-WO-2025-104</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Chinna Thirupathi UGD Sewerage Main</div>
+                                <div class="text-white-50 small">e-MB Book #14, Pages 88-94 &bull; Ward 1</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹48,20,000.00</div></td>
+                            <td>
+                                <div class="text-warning small">-₹5,78,400.00</div>
+                                <div class="text-white-50" style="font-size: 0.72rem;">(TDS 2%, GST 2%, Cess 1%, Ret 5%)</div>
+                            </td>
+                            <td><div class="text-gold fw-bold">₹42,41,600.00</div></td>
+                            <td>
+                                <span class="badge-amber"><i class="fa-solid fa-clock-rotate-left me-1"></i> Under EE Scrutiny</span>
+                            </td>
+                            <td>
+                                <button class="btn-outline-gold-sm" onclick="alert('Viewing RA Bill #5 Scrutiny Checklist:\n- Measurement Book joint inspection passed\n- Concrete cube strength test verified\n- Currently at Accounts Branch for payment token generation.');">
+                                    <i class="fa-solid fa-magnifying-glass me-1"></i> Audit Trail
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-circle-check text-success me-2"></i>RA Bill #4 (UGD)</div>
+                                <div class="text-white-50 small">WO: #SLM-WO-2025-104</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Chinna Thirupathi UGD Sewerage Main</div>
+                                <div class="text-white-50 small">e-MB Book #14, Pages 42-60 &bull; Ward 1</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹72,50,000.00</div></td>
+                            <td>
+                                <div class="text-warning small">-₹8,70,000.00</div>
+                                <div class="text-white-50" style="font-size: 0.72rem;">Statutory Deductions</div>
+                            </td>
+                            <td><div class="text-success fw-bold">₹63,80,000.00</div></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-check me-1"></i> Disbursed (12-Oct-26)</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Certified Municipal Payment Voucher #VCH-2026-8812 (PDF)... Transferred via RBI e-Kuber.');">
+                                    <i class="fa-solid fa-download me-1"></i> Voucher
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-circle-check text-success me-2"></i>RA Bill #3 (LED)</div>
+                                <div class="text-white-50 small">WO: #SLM-WO-2026-042</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Smart LED Streetlight Feeder Conversion</div>
+                                <div class="text-white-50 small">e-MB Book #09, Pages 11-22 &bull; Ward 1 &amp; 2</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹65,00,000.00</div></td>
+                            <td>
+                                <div class="text-warning small">-₹7,80,000.00</div>
+                                <div class="text-white-50" style="font-size: 0.72rem;">Statutory Deductions</div>
+                            </td>
+                            <td><div class="text-success fw-bold">₹57,20,000.00</div></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-check me-1"></i> Disbursed (28-Sep-26)</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Stamped Payment Voucher #VCH-2026-7910 (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Voucher
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white"><i class="fa-solid fa-circle-check text-success me-2"></i>RA Bill #2 (Drain)</div>
+                                <div class="text-white-50 small">WO: #SLM-WO-2026-089</div>
+                            </td>
+                            <td>
+                                <div class="text-white fw-semibold">Stormwater Drain RCC Box Culvert</div>
+                                <div class="text-white-50 small">e-MB Book #11, Pages 30-48 &bull; Fairlands Zone</div>
+                            </td>
+                            <td><div class="text-white fw-bold">₹1,12,00,000.00</div></td>
+                            <td>
+                                <div class="text-warning small">-₹13,44,000.00</div>
+                                <div class="text-white-50" style="font-size: 0.72rem;">Statutory Deductions</div>
+                            </td>
+                            <td><div class="text-success fw-bold">₹98,56,000.00</div></td>
+                            <td>
+                                <span class="badge-green"><i class="fa-solid fa-check me-1"></i> Disbursed (15-Aug-26)</span>
+                            </td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Downloading Stamped Payment Voucher #VCH-2026-6402 (PDF)...');">
+                                    <i class="fa-solid fa-download me-1"></i> Voucher
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit New RA Bill Form -->
+    <div class="dash-card mb-4" id="submitRABillSection">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title"><i class="fa-solid fa-file-circle-plus text-gold me-2"></i>Submit New Running Account (RA) Bill</h2>
+                <p class="dash-card-subtitle">Upload digital tax invoice and certified e-MB joint measurement sheets.</p>
+            </div>
+        </div>
+        <div class="dash-card-body">
+            <form onsubmit="handleSubmitRABill(event)">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="dash-form-label">Active Work Order <span class="text-danger">*</span></label>
+                        <select class="dash-select w-100" id="raWorkOrder" required>
+                            <option value="" disabled selected>Select Active Work Order</option>
+                            <option value="WO-2025-104">#SLM-WO-2025-104: Chinna Thirupathi UGD Sewerage Main (₹4.80 Cr)</option>
+                            <option value="WO-2026-089">#SLM-WO-2026-089: Stormwater Drain RCC Box Culvert (₹5.50 Cr)</option>
+                            <option value="WO-2026-042">#SLM-WO-2026-042: Smart LED Feeder Conversion Phase II (₹2.15 Cr)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="dash-form-label">Bill Serial Number <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="e.g. RA Bill #6" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="dash-form-label">e-MB Book Reference &amp; Pages <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="e.g. MB #14, Pages 95-108" required>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <label class="dash-form-label">Gross Value of Work Done (₹) <span class="text-danger">*</span></label>
+                        <input type="number" class="form-control" id="grossClaim" placeholder="e.g. 3500000" required oninput="calcNetPayable()">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="dash-form-label">Contractor GST Invoice # <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" placeholder="e.g. SRI/2026/INV-112" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="dash-form-label">Invoice Date <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" required value="2026-11-12">
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label class="dash-form-label">Certified MB Joint Inspection Sheet (.PDF) <span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" accept=".pdf" required>
+                        <span class="text-white-50" style="font-size: 0.72rem;">Must be countersigned by Assistant Executive Engineer</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="dash-form-label">Quality Control Lab Test Reports (.PDF) <span class="text-danger">*</span></label>
+                        <input type="file" class="form-control" accept=".pdf" required>
+                        <span class="text-white-50" style="font-size: 0.72rem;">Cube strength, aggregate sieve analysis, or bitumen density test</span>
+                    </div>
+                </div>
+
+                <div class="p-3 rounded-3 mb-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div class="text-white-50 small">
+                            <span class="fw-bold text-white">Automated Statutory Deductions (10% Total):</span><br>
+                            TDS IT 194C (2%) + GST TDS (2%) + Labour Welfare Cess (1%) + Security Retention (5%)
+                        </div>
+                        <div class="text-end">
+                            <span class="text-white-50 small">Estimated Net Treasury Disbursement:</span>
+                            <div class="text-gold fw-bold" id="netDisburseValue" style="font-size: 1.25rem;">₹0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 pt-2 border-top border-secondary border-opacity-25">
+                    <span class="text-white-50 small"><i class="fa-solid fa-stamp text-gold me-1"></i> Billed directly under Salem Municipal Corporation GSTIN #33AAALM0012P1Z4.</span>
+                    <button type="submit" class="btn-gold-sm">
+                        <i class="fa-solid fa-paper-plane me-1"></i> Sign with DSC &amp; Submit RA Bill
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function filterInvoices() {
+            var input = document.getElementById('invSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById('invTable');
+            var tr = table.getElementsByTagName('tr');
+            for (var i = 1; i < tr.length; i++) {
+                var text = tr[i].textContent || tr[i].innerText;
+                tr[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        function calcNetPayable() {
+            var gross = parseFloat(document.getElementById('grossClaim').value) || 0;
+            var net = gross * 0.90; // 90% after 10% deductions
+            document.getElementById('netDisburseValue').innerText = '₹' + net.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        function handleSubmitRABill(e) {
+            e.preventDefault();
+            var wo = document.getElementById('raWorkOrder').value;
+            alert('RA Bill for ' + wo + ' submitted successfully!\nDigital Scrutiny Token: #SLM-RA-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nExecutive Engineer & Municipal Treasury notified.');
+        }
+    </script>
+</body>
+</html>

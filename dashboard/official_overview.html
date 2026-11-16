@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Operations Hub | Metropolitan Civic Municipal Corporation</title>
+    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dash-page-body">
+
+    <!-- Page Header -->
+    <div class="dash-page-header">
+        <div>
+            <h1 class="dash-page-title">City Operations Command Center</h1>
+            <p class="dash-page-subtitle">Real-time civic telemetry, field engineer dispatch, utility networks, and administrative workflow orchestration.</p>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+            <span class="badge-green"><i class="fa-solid fa-satellite-dish me-1"></i> Telemetry Online</span>
+            <button class="btn-outline-gold-sm" onclick="alert('Broadcasting High-Priority Civic Advisory: Heavy monsoon rainfall predicted across Salem district over the next 48 hours. Drainage teams on standby.');">
+                <i class="fa-solid fa-bullhorn me-1"></i> Broadcast Alert
+            </button>
+            <button class="btn-gold-sm" onclick="alert('Exporting Salem City Operations Executive Daily Briefing (PDF)...');">
+                <i class="fa-solid fa-file-pdf me-1"></i> Daily Briefing
+            </button>
+        </div>
+    </div>
+
+    <!-- 4 High-Level Metric Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Active Ward Tickets</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-headset"></i></div>
+                </div>
+                <div class="stat-value text-white">38</div>
+                <div class="stat-meta text-gold"><i class="fa-solid fa-clock me-1"></i> 6 Approaching SLA Threshold</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Revenue Today</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                </div>
+                <div class="stat-value text-success">₹4.85 L</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-arrow-up me-1"></i> 104% of Daily Zonal Target</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Field Crews Deployed</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-truck-pickup"></i></div>
+                </div>
+                <div class="stat-value text-info">14 Teams</div>
+                <div class="stat-meta text-info"><i class="fa-solid fa-location-dot me-1"></i> GPS Live Tracked</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="dash-stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="stat-label mb-0">Smart Grid Uptime</span>
+                    <div class="stat-icon-box"><i class="fa-solid fa-bolt"></i></div>
+                </div>
+                <div class="stat-value text-white">99.2%</div>
+                <div class="stat-meta text-success"><i class="fa-solid fa-check me-1"></i> 14,200 Connected Streetlights</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Telemetry & Utility Grids Status -->
+    <div class="row g-4 mb-4">
+        <div class="col-lg-8">
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Zonal Utility Telemetry &amp; SCADA Feeds</h2>
+                        <p class="dash-card-subtitle">Live sensor readings across water reservoirs, pressure pumps, and municipal sanitation hubs.</p>
+                    </div>
+                    <span class="badge-blue"><i class="fa-solid fa-rotate me-1"></i> Updated 2 mins ago</span>
+                </div>
+                <div class="dash-card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold text-white small"><i class="fa-solid fa-droplet text-info me-2"></i>Mettur Pipeline Intake Hub</span>
+                                    <span class="badge-green">Optimal</span>
+                                </div>
+                                <div class="stat-value text-info mb-1" style="font-size: 1.4rem;">4.2 Bar</div>
+                                <div class="progress mb-2" style="height: 6px; background: rgba(255,255,255,0.1);">
+                                    <div class="progress-bar bg-info" style="width: 82%;"></div>
+                                </div>
+                                <div class="d-flex justify-content-between text-white-50 small" style="font-size: 0.72rem;">
+                                    <span>Flow: 18.4 MLD</span>
+                                    <span>Turbidity: 0.8 NTU</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold text-white small"><i class="fa-solid fa-faucet-drip text-gold me-2"></i>Hasthampatti Reservoir Tank</span>
+                                    <span class="badge-green">94% Capacity</span>
+                                </div>
+                                <div class="stat-value text-gold mb-1" style="font-size: 1.4rem;">4.7 ML</div>
+                                <div class="progress mb-2" style="height: 6px; background: rgba(255,255,255,0.1);">
+                                    <div class="progress-bar bg-warning" style="width: 94%;"></div>
+                                </div>
+                                <div class="d-flex justify-content-between text-white-50 small" style="font-size: 0.72rem;">
+                                    <span>Pressure: 3.1 Bar</span>
+                                    <span>Zone 1 &amp; 2 Feeder</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold text-white small"><i class="fa-solid fa-recycle text-success me-2"></i>Micro-Composting &amp; Bio-CNG</span>
+                                    <span class="badge-green">Active</span>
+                                </div>
+                                <div class="stat-value text-success mb-1" style="font-size: 1.4rem;">84.2 Tons</div>
+                                <div class="progress mb-2" style="height: 6px; background: rgba(255,255,255,0.1);">
+                                    <div class="progress-bar bg-success" style="width: 88%;"></div>
+                                </div>
+                                <div class="d-flex justify-content-between text-white-50 small" style="font-size: 0.72rem;">
+                                    <span>Wet Waste: 92% Sorted</span>
+                                    <span>CH4 Production: Normal</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold text-white small"><i class="fa-solid fa-lightbulb text-warning me-2"></i>Smart LED Streetlight Feeder</span>
+                                    <span class="badge-green">Operational</span>
+                                </div>
+                                <div class="stat-value text-white mb-1" style="font-size: 1.4rem;">14,080 / 14,200</div>
+                                <div class="progress mb-2" style="height: 6px; background: rgba(255,255,255,0.1);">
+                                    <div class="progress-bar bg-info" style="width: 99%;"></div>
+                                </div>
+                                <div class="d-flex justify-content-between text-white-50 small" style="font-size: 0.72rem;">
+                                    <span>Faults: 120 (Patrolling)</span>
+                                    <span>Power Saving: 38.4%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Field Crew Dispatch Status -->
+        <div class="col-lg-4">
+            <div class="dash-card h-100">
+                <div class="dash-card-header">
+                    <div>
+                        <h2 class="dash-card-title">Deployed Field Units</h2>
+                        <p class="dash-card-subtitle">Active GPS dispatched municipal squads</p>
+                    </div>
+                </div>
+                <div class="dash-card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div>
+                            <div class="text-white fw-semibold small">Water Pipe Repair Crew #1</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Vehicle: TN-27-G-4410 &bull; Chinna Thirupathi</div>
+                        </div>
+                        <span class="badge-amber">On-Site</span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div>
+                            <div class="text-white fw-semibold small">Sanitation Jetting Squad #4</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Super Sucker Unit &bull; Hasthampatti Main</div>
+                        </div>
+                        <span class="badge-green">Cleared</span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-secondary border-opacity-25">
+                        <div>
+                            <div class="text-white fw-semibold small">Bitumen Patching Unit #2</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Infrared Paver &bull; Fairlands Junction</div>
+                        </div>
+                        <span class="badge-amber">In-Progress</span>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <div class="text-white fw-semibold small">Electrical Maintenance Van #6</div>
+                            <div class="text-white-50" style="font-size: 0.74rem;">Hydraulic Lift &bull; Suramangalam Ring Rd</div>
+                        </div>
+                        <span class="badge-blue">En-Route</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Urgent Incident Logs & Action Table -->
+    <div class="dash-card">
+        <div class="dash-card-header">
+            <div>
+                <h2 class="dash-card-title">Urgent Administrative Incidents &amp; Citizen Tickets</h2>
+                <p class="dash-card-subtitle">High-priority civic reports requiring zonal engineer sign-off or executive intervention.</p>
+            </div>
+            <a href="official_grievances.html" class="btn-outline-gold-sm">View Full Ticket Queue</a>
+        </div>
+        <div class="dash-card-body p-0">
+            <div class="dash-table-container">
+                <table class="dash-table">
+                    <thead>
+                        <tr>
+                            <th>Incident Ref &amp; Ward</th>
+                            <th>Category</th>
+                            <th>Description &amp; Location</th>
+                            <th>Assigned Officer</th>
+                            <th>SLA Deadline</th>
+                            <th>Executive Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9921</div>
+                                <div class="text-white-50 small">Ward 1 &bull; Chinna Thirupathi</div>
+                            </td>
+                            <td><span class="badge-blue">Water Distribution</span></td>
+                            <td>
+                                <div class="text-white fw-semibold">Distribution Main Valve Leak</div>
+                                <div class="text-white-50 small">MMR Complex Junction &bull; Low Pressure in 14 residences</div>
+                            </td>
+                            <td>
+                                <div class="text-white">AE Water (Er. S. Murugesan)</div>
+                                <div class="text-white-50 small">Phone: +91 9876543210</div>
+                            </td>
+                            <td><span class="text-danger fw-bold"><i class="fa-solid fa-triangle-exclamation me-1"></i> 2 Hrs Left</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Dispatching Escalation Notice to Assistant Engineer S. Murugesan...');">
+                                    <i class="fa-solid fa-bolt me-1"></i> Expedite
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9890</div>
+                                <div class="text-white-50 small">Ward 3 &bull; Fairlands Main</div>
+                            </td>
+                            <td><span class="badge-amber">Public Works</span></td>
+                            <td>
+                                <div class="text-white fw-semibold">Stormwater Drain Cover Displaced</div>
+                                <div class="text-white-50 small">Opposite Canara Bank &bull; Traffic hazard risk</div>
+                            </td>
+                            <td>
+                                <div class="text-white">AE Roads (Er. K. Natarajan)</div>
+                                <div class="text-white-50 small">Hasthampatti Zone</div>
+                            </td>
+                            <td><span class="text-gold fw-bold">6 Hrs Left</span></td>
+                            <td>
+                                <button class="btn-gold-sm" onclick="alert('Assigned Replacement Pre-Cast Slab Crew. Work Order #WO-8812 Issued.');">
+                                    <i class="fa-solid fa-check me-1"></i> Approve
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="fw-bold text-white">#SLM-GRV-2026-9774</div>
+                                <div class="text-white-50 small">Ward 4 &bull; Suramangalam</div>
+                            </td>
+                            <td><span class="badge-purple">Sanitation</span></td>
+                            <td>
+                                <div class="text-white fw-semibold">Solid Waste Bin Overflow</div>
+                                <div class="text-white-50 small">Market Gate 2 &bull; Secondary compactor required</div>
+                            </td>
+                            <td>
+                                <div class="text-white">Sanitary Inspector V. Ravi</div>
+                                <div class="text-white-50 small">Health Dept. Circle 2</div>
+                            </td>
+                            <td><span class="text-success fw-bold">Completed</span></td>
+                            <td>
+                                <button class="btn-outline-gold-sm" onclick="alert('Viewing Geotagged Completion Photo & Weight Scale Slip #SLM-WT-4418.');">
+                                    <i class="fa-solid fa-image me-1"></i> Audit Slip
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
