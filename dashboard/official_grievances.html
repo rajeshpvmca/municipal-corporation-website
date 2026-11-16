@@ -388,5 +388,15 @@
             alert('Work Order #SLM-WO-' + Math.floor(1000 + Math.random() * 9000) + ' Generated!\nSquad: ' + squad + '\nGPS coordinates transmitted to crew dashboard.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>

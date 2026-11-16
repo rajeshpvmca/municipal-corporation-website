@@ -359,5 +359,15 @@
             alert('Application for ' + cat + ' Certificate submitted successfully!\nTracking Ack Ref: SLM-ACK-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nEstimated dispatch: 48 Hours to your digital vault.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>

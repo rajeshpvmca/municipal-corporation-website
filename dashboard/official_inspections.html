@@ -282,5 +282,15 @@
             alert('Site Audit for "' + cat + '" successfully scheduled!\nInspection Token: #SLM-INSP-' + Math.floor(1000 + Math.random() * 9000) + '\nAssigned engineer notified via Mobile Field Portal.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>

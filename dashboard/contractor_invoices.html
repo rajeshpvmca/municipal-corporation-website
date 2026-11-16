@@ -312,5 +312,15 @@
             alert('RA Bill for ' + wo + ' submitted successfully!\nDigital Scrutiny Token: #SLM-RA-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nExecutive Engineer & Municipal Treasury notified.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>

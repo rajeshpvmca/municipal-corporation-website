@@ -322,5 +322,15 @@
             alert(cat + ' uploaded successfully!\nScrutiny Token: #SLM-CMP-2026-' + Math.floor(1000 + Math.random() * 9000) + '\nSuperintending Engineer & Audit Wing will verify within 48 hours.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>

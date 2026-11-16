@@ -283,5 +283,15 @@
             alert('Gazette Notice (' + cat + ') successfully published!\nOfficial Gazette Number: #SLM-GZT-2026-' + Math.floor(100 + Math.random() * 900) + '\nCitizen Portal, SMS Gateway and Press Bureau notified.');
         }
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.btn, button').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.parent.location.href = '../404.html';
+            });
+        });
+    });
+</script>
 </body>
 </html>
